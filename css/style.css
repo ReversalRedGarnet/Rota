@@ -1105,69 +1105,27 @@ p { text-wrap: pretty; }
   padding: 1.25rem;
   box-shadow: var(--shadow-sm);
 }
-/* Calendar tile ------------------------------------------------------------
-   Built to read as a small desk/wall calendar: a maroon header strip with two
-   binding holes punched through it, then the day number on cream below.
-   -------------------------------------------------------------------------- */
 .event-date {
   flex: none;
-  justify-self: start;
-  align-self: start;
-  width: 78px;
-  overflow: hidden;
+  width: 74px;
   text-align: center;
-  border-radius: 10px;
-  background: var(--cream);
-  border: 1px solid var(--cream-3);
-  box-shadow: 0 3px 9px rgba(78, 15, 13, 0.16);
-}
-
-/* Header strip — month, with the two binding holes */
-.event-month {
-  position: relative;
-  display: block;
+  border-radius: var(--radius-sm);
   background: var(--maroon);
-  color: var(--gold-bright);
-  font-size: 0.62rem;
-  font-weight: 800;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  line-height: 1;
-  padding: 0.62rem 0.2rem 0.28rem;
+  color: var(--on-dark);
+  padding: 0.6rem 0.4rem;
 }
-.event-month::before,
-.event-month::after {
-  content: "";
-  position: absolute;
-  top: 0.2rem;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--cream);
-}
-.event-month::before { left: 32%; }
-.event-month::after { right: 32%; }
-
-/* The day number does the heavy lifting */
-.event-day {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 1.8rem;
-  font-weight: 700;
-  line-height: 1;
-  color: var(--maroon-deep);
-  padding-top: 0.4rem;
-}
-
-/* Day of the week, sitting under the number */
-.event-dow {
-  display: block;
-  font-size: 0.56rem;
+.event-month {
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ink-soft);
-  padding: 0.2rem 0.2rem 0.5rem;
+  color: var(--gold-bright);
+}
+.event-day {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.1;
 }
 .event-body { display: flex; flex-direction: column; gap: 0.45rem; }
 .event-body h3 { font-size: 1.1rem; }
@@ -1182,7 +1140,7 @@ p { text-wrap: pretty; }
 .event-body p { font-size: 0.94rem; color: var(--ink-soft); }
 
 @media (min-width: 620px) {
-  .event { grid-template-columns: 78px 1fr auto; align-items: center; }
+  .event { grid-template-columns: 74px 1fr auto; align-items: center; }
   .event .btn { justify-self: end; }
 }
 
