@@ -16,6 +16,5 @@
     <path d="M-44 -56 l16 -26 h56 l16 26" stroke-linecap="round"/>
   </g>
   <text x="600" y="546" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="40" font-weight="800" letter-spacing="7" fill="#E8C06A" opacity="0.92">PLACEHOLDER</text>
-  <text x="600" y="600" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="30" font-weight="500" letter-spacing="3" fill="#FCF7EE" opacity="0.66">Workshop photo</text>
-  <text x="600" y="660" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="23" font-weight="400" fill="#FCF7EE" opacity="0.42">Replace this file with a real club photo</text>
+  <text x="600" y="600" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="30" font-weight="500" letter-spacing="3" fill="#FCF7EE" opacity="0.66">Workshop photo</text>
 </svg>

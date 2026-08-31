@@ -296,6 +296,169 @@
   }
 
   /* ------------------------------------------------------------------------
+     9. EVENTS CALENDAR
+     A small monthly calendar with no external library. Event data lives in
+     CALENDAR_EVENTS below — each entry needs a "date" in YYYY-MM-DD form.
+     Add, edit or remove events by editing that array; the grid, weekday
+     alignment and leap years are all calculated, not hard-coded.
+     ------------------------------------------------------------------------ */
+  function initCalendar() {
+    var root = document.getElementById("events-calendar");
+    if (!root) return;
+
+    var grid = document.getElementById("cal-grid");
+    var titleEl = document.getElementById("cal-title");
+    var detail = document.getElementById("cal-detail");
+    var prevBtn = document.getElementById("cal-prev");
+    var nextBtn = document.getElementById("cal-next");
+    var monthNames = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"];
+
+    function pad(n) { return n < 10 ? "0" + n : "" + n; }
+
+    // Sample events — replace with the club's real dates, or add more by
+    // copying a line. "date" must be YYYY-MM-DD. Days are anchored to the
+    // current month (clamped to however many days it has) so a few sample
+    // events are always visible on the month shown when the page loads,
+    // whatever today's date happens to be.
+    var now = new Date();
+    var sampleYear = now.getFullYear();
+    var sampleMonth = now.getMonth();
+    var daysInSampleMonth = new Date(sampleYear, sampleMonth + 1, 0).getDate();
+    function sampleDate(day) {
+      var d = Math.min(day, daysInSampleMonth);
+      return sampleYear + "-" + pad(sampleMonth + 1) + "-" + pad(d);
+    }
+
+    var CALENDAR_EVENTS = [
+      { date: sampleDate(5), title: "Club meeting", time: "5:30 PM", location: "Honiara", tag: "Club Meeting", description: "Our regular get-together — plan projects, hear from a guest, catch up." },
+      { date: sampleDate(12), title: "Community clean-up", time: "8:00 AM", location: "Honiara", tag: "Volunteering", description: "A hands-on volunteering morning. Anyone can join in, member or not." },
+      { date: sampleDate(19), title: "Fundraising night", time: "6:00 PM", location: "Honiara", tag: "Fundraiser", description: "Proceeds go straight into current projects." },
+      { date: sampleDate(26), title: "Social night", time: "6:30 PM", location: "Honiara", tag: "Social", description: "Sport, food and good company — the bit that keeps everyone coming back." }
+    ];
+
+    var eventsByDate = {};
+    CALENDAR_EVENTS.forEach(function (ev) {
+      (eventsByDate[ev.date] = eventsByDate[ev.date] || []).push(ev);
+    });
+
+    var todayISO = now.getFullYear() + "-" + pad(now.getMonth() + 1) + "-" + pad(now.getDate());
+    var view = new Date();
+    view.setDate(1);
+
+    function render() {
+      grid.innerHTML = "";
+      detail.hidden = true;
+      detail.innerHTML = "";
+
+      var year = view.getFullYear();
+      var month = view.getMonth();
+      titleEl.textContent = monthNames[month] + " " + year;
+
+      var firstWeekday = new Date(year, month, 1).getDay();
+      var daysInMonth = new Date(year, month + 1, 0).getDate();
+      var daysInPrevMonth = new Date(year, month, 0).getDate();
+
+      var cells = [];
+      for (var i = 0; i < firstWeekday; i++) {
+        cells.push({ day: daysInPrevMonth - firstWeekday + 1 + i, muted: true });
+      }
+      for (var d = 1; d <= daysInMonth; d++) {
+        cells.push({ day: d, muted: false, iso: year + "-" + pad(month + 1) + "-" + pad(d) });
+      }
+      var trailing = 1;
+      while (cells.length % 7 !== 0) {
+        cells.push({ day: trailing++, muted: true });
+      }
+
+      cells.forEach(function (cell) {
+        var isInteractive = !cell.muted;
+        var el = document.createElement(isInteractive ? "button" : "div");
+        el.className = "cal-cell" + (cell.muted ? " is-muted" : "");
+
+        var dayNum = document.createElement("span");
+        dayNum.className = "cal-daynum";
+        dayNum.textContent = cell.day;
+        el.appendChild(dayNum);
+
+        if (!isInteractive) {
+          el.setAttribute("aria-hidden", "true");
+          grid.appendChild(el);
+          return;
+        }
+
+        el.type = "button";
+        if (cell.iso === todayISO) el.classList.add("is-today");
+
+        var dayEvents = eventsByDate[cell.iso];
+        if (dayEvents && dayEvents.length) {
+          el.classList.add("has-events");
+          var wrap = document.createElement("span");
+          wrap.className = "cal-events";
+          dayEvents.forEach(function (ev) {
+            var pill = document.createElement("span");
+            pill.className = "cal-event-pill";
+            pill.textContent = ev.title;
+            wrap.appendChild(pill);
+          });
+          el.appendChild(wrap);
+          el.setAttribute("aria-label",
+            monthNames[month] + " " + cell.day + ", " + dayEvents.length +
+            (dayEvents.length > 1 ? " events: " : " event: ") +
+            dayEvents.map(function (e) { return e.title; }).join(", "));
+          el.addEventListener("click", function () { showDetail(dayEvents, cell.iso); });
+        } else {
+          el.setAttribute("aria-label", monthNames[month] + " " + cell.day + ", no events");
+        }
+
+        grid.appendChild(el);
+      });
+    }
+
+    function showDetail(dayEvents, iso) {
+      var dateObj = new Date(iso + "T00:00:00");
+      var heading = dateObj.toLocaleDateString(undefined, { weekday: "long", month: "long", day: "numeric" });
+
+      var html = '<p class="cal-detail-date">' + heading + "</p>";
+      html += dayEvents.map(function (ev) {
+        return (
+          '<article class="cal-detail-card">' +
+            '<span class="tag tag-outline">' + ev.tag + "</span>" +
+            "<h3>" + ev.title + "</h3>" +
+            '<div class="event-meta"><span>🕒 ' + ev.time + '</span><span>📍 ' + ev.location + "</span></div>" +
+            "<p>" + ev.description + "</p>" +
+          "</article>"
+        );
+      }).join("");
+
+      detail.innerHTML = html;
+      detail.hidden = false;
+      detail.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+
+    prevBtn.addEventListener("click", function () { view.setMonth(view.getMonth() - 1); render(); });
+    nextBtn.addEventListener("click", function () { view.setMonth(view.getMonth() + 1); render(); });
+
+    render();
+  }
+
+  /* ------------------------------------------------------------------------
+     10. HEADER SCROLL STATE
+     Adds a small shadow to the sticky header once the page has scrolled,
+     so it reads as "lifted" above the content rather than always floating.
+     ------------------------------------------------------------------------ */
+  function initHeaderScroll() {
+    var header = document.querySelector(".site-header");
+    if (!header) return;
+
+    function update() {
+      header.classList.toggle("is-scrolled", window.scrollY > 8);
+    }
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+  }
+
+  /* ------------------------------------------------------------------------
      Boot
      ------------------------------------------------------------------------ */
   document.addEventListener("DOMContentLoaded", function () {
@@ -307,5 +470,7 @@
     initLightbox();
     initForms();
     initYear();
+    initCalendar();
+    initHeaderScroll();
   });
 })();

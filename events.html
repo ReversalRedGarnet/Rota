@@ -73,7 +73,7 @@
       <li><a href="about.html">About</a></li>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="events.html" aria-current="page">Events</a></li>
-      <li><a href="join.html">Join Us</a></li>
+      <li><a href="join.html" class="nav-join">Join Us</a></li>
       <li>
         <button class="submenu-btn" aria-expanded="false" aria-controls="more-menu">
           More <span class="caret" aria-hidden="true">▾</span>
@@ -141,7 +141,6 @@
       <p>
         Most of what we do is open to visitors. If something below looks interesting, come along —
         or message us on Instagram and we'll tell you where to find us.
-        <span class="placeholder-note">Placeholder copy</span>
       </p>
     </div>
   </section>
@@ -162,121 +161,62 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
           </div>
           <h3>Club meetings</h3>
-          <p>Our regular get-together. Plan projects, hear from a guest, catch up. <span class="placeholder-note">Placeholder</span></p>
+          <p>Our regular get-together. Plan projects, hear from a guest, catch up.</p>
         </article>
         <article class="pillar reveal">
           <div class="pillar-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.3 5.9 20.6l1.4-6.8L2.2 9.1l6.9-.8z"/></svg>
           </div>
           <h3>Fundraisers</h3>
-          <p>Formal nights, raffles, quiz nights — all proceeds go straight into projects. <span class="placeholder-note">Placeholder</span></p>
+          <p>Formal nights, raffles, quiz nights — all proceeds go straight into projects.</p>
         </article>
         <article class="pillar reveal">
           <div class="pillar-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0L12 5.35l-.77-.77a5.4 5.4 0 0 0-7.65 7.65l8.42 8.42 8.42-8.42a5.4 5.4 0 0 0 0-7.65z"/></svg>
           </div>
           <h3>Volunteering days</h3>
-          <p>Hands-on project days. Anyone can join in, member or not. <span class="placeholder-note">Placeholder</span></p>
+          <p>Hands-on project days. Anyone can join in, member or not.</p>
         </article>
         <article class="pillar reveal">
           <div class="pillar-icon">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
           <h3>Socials</h3>
-          <p>Sport, food, beach days. The bit that keeps everyone coming back. <span class="placeholder-note">Placeholder</span></p>
+          <p>Sport, food, beach days. The bit that keeps everyone coming back.</p>
         </article>
       </div>
     </div>
   </section>
 
   <!-- ========================================================================
-       UPCOMING EVENTS
-       TO EDIT: each <article class="event"> is one event. Copy to add another,
-       delete to remove one. Keep them in date order, soonest first.
+       UPCOMING EVENTS — monthly calendar
+       Event data lives in js/main.js (search for CALENDAR_EVENTS). Add,
+       edit or remove events there — the grid below is built from that
+       data automatically, nothing here is hard-coded per day.
        ======================================================================== -->
   <section class="section section-alt">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Coming up</span>
-        <h2>What's on next</h2>
-        <p>
-          <span class="placeholder-note">Placeholder</span>
-          Replace the month, day, name, time and venue on each row below with real events.
-        </p>
+        <h2>Upcoming Events</h2>
+        <p>Browse the calendar below. Tap a date with an event to see the details.</p>
       </div>
 
-      <div class="grid" style="gap:1rem;">
-
-        <!-- ===== EVENT ROW — copy this block to add another ===== -->
-        <article class="event reveal">
-          <div class="event-date">
-            <div class="event-month">Mon</div>
-            <div class="event-day">00</div>
-          </div>
-          <div class="event-body">
-            <h3>[Event Name] <span class="placeholder-note">Placeholder</span></h3>
-            <div class="event-meta">
-              <span>🕒 [Start time]</span>
-              <span>📍 [Venue, Honiara]</span>
-              <span class="tag tag-outline">Club Meeting</span>
-            </div>
-            <p>A couple of lines about what happens, who it's for, and whether visitors can just turn up.</p>
-          </div>
-          <a href="contact.html" class="btn btn-outline btn-sm">Ask about this</a>
-        </article>
-        <!-- ===== END EVENT ROW ===== -->
-
-        <article class="event reveal">
-          <div class="event-date">
-            <div class="event-month">Mon</div>
-            <div class="event-day">00</div>
-          </div>
-          <div class="event-body">
-            <h3>[Event Name] <span class="placeholder-note">Placeholder</span></h3>
-            <div class="event-meta">
-              <span>🕒 [Start time]</span>
-              <span>📍 [Venue, Honiara]</span>
-              <span class="tag tag-outline">Volunteering</span>
-            </div>
-            <p>A couple of lines about what happens, who it's for, and whether visitors can just turn up.</p>
-          </div>
-          <a href="contact.html" class="btn btn-outline btn-sm">Ask about this</a>
-        </article>
-
-        <article class="event reveal">
-          <div class="event-date">
-            <div class="event-month">Mon</div>
-            <div class="event-day">00</div>
-          </div>
-          <div class="event-body">
-            <h3>[Event Name] <span class="placeholder-note">Placeholder</span></h3>
-            <div class="event-meta">
-              <span>🕒 [Start time]</span>
-              <span>📍 [Venue, Honiara]</span>
-              <span class="tag tag-outline">Fundraiser</span>
-            </div>
-            <p>A couple of lines about what happens, who it's for, and whether visitors can just turn up.</p>
-          </div>
-          <a href="contact.html" class="btn btn-outline btn-sm">Ask about this</a>
-        </article>
-
-        <article class="event reveal">
-          <div class="event-date">
-            <div class="event-month">Mon</div>
-            <div class="event-day">00</div>
-          </div>
-          <div class="event-body">
-            <h3>[Event Name] <span class="placeholder-note">Placeholder</span></h3>
-            <div class="event-meta">
-              <span>🕒 [Start time]</span>
-              <span>📍 [Venue, Honiara]</span>
-              <span class="tag tag-outline">Social</span>
-            </div>
-            <p>A couple of lines about what happens, who it's for, and whether visitors can just turn up.</p>
-          </div>
-          <a href="contact.html" class="btn btn-outline btn-sm">Ask about this</a>
-        </article>
-
+      <div class="calendar reveal" id="events-calendar">
+        <div class="calendar-head">
+          <button type="button" class="calendar-nav" id="cal-prev" aria-label="Previous month">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <h3 class="calendar-title" id="cal-title" aria-live="polite">&nbsp;</h3>
+          <button type="button" class="calendar-nav" id="cal-next" aria-label="Next month">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+        <div class="calendar-weekdays" aria-hidden="true">
+          <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+        </div>
+        <div class="calendar-grid" id="cal-grid" role="grid" aria-label="Event calendar"></div>
+        <div class="calendar-detail" id="cal-detail" hidden></div>
       </div>
     </div>
   </section>
@@ -288,19 +228,19 @@
     <div class="wrap">
       <div class="split reveal">
         <figure class="split-media">
-          <img src="assets/images/photo-6.svg" alt="Placeholder — replace with the event poster or a photo from last year">
+          <img src="assets/images/photo-6.svg" alt="Placeholder photo — the event poster or a photo from last year">
         </figure>
         <div>
           <span class="tag tag-maroon">Our biggest night</span>
-          <h2 style="margin-top:0.9rem;">[Annual Ball / Signature Event Name] <span class="placeholder-note">Placeholder</span></h2>
+          <h2 style="margin-top:0.9rem;">Our signature annual event</h2>
           <p style="margin-top:1rem;">
             A paragraph about the club's flagship formal event — what it's for, what the night looks
             like, and where the money goes. This is the one that draws sponsors, so give it space.
           </p>
           <ul class="ticks">
-            <li>Date: [date] &middot; Venue: [venue] <span class="placeholder-note">Placeholder</span></li>
-            <li>Tickets: [price / how to get them] <span class="placeholder-note">Placeholder</span></li>
-            <li>Proceeds go to [cause] <span class="placeholder-note">Placeholder</span></li>
+            <li>Date and venue to be announced</li>
+            <li>Ticket details to be announced</li>
+            <li>Proceeds go to a chosen cause</li>
           </ul>
           <div class="btn-row" style="margin-top:1.75rem;">
             <a href="contact.html" class="btn btn-maroon">Enquire about tickets</a>
@@ -325,33 +265,33 @@
       <div class="grid grid-3">
         <article class="card reveal">
           <div class="card-media">
-            <span class="tag">[Month Year]</span>
-            <img src="assets/images/photo-2.svg" alt="Placeholder — replace with a photo from this event">
+            <span class="tag">Recent</span>
+            <img src="assets/images/photo-2.svg" alt="Placeholder photo — a photo from this event">
           </div>
           <div class="card-body">
-            <h3>[Past Event Name] <span class="placeholder-note">Placeholder</span></h3>
+            <h3>Event name</h3>
             <p>A line or two on how it went and roughly how many people came.</p>
             <a class="link-arrow" href="gallery.html">See the photos</a>
           </div>
         </article>
         <article class="card reveal">
           <div class="card-media">
-            <span class="tag">[Month Year]</span>
-            <img src="assets/images/photo-5.svg" alt="Placeholder — replace with a photo from this event">
+            <span class="tag">Recent</span>
+            <img src="assets/images/photo-5.svg" alt="Placeholder photo — a photo from this event">
           </div>
           <div class="card-body">
-            <h3>[Past Event Name] <span class="placeholder-note">Placeholder</span></h3>
+            <h3>Event name</h3>
             <p>A line or two on how it went and roughly how many people came.</p>
             <a class="link-arrow" href="gallery.html">See the photos</a>
           </div>
         </article>
         <article class="card reveal">
           <div class="card-media">
-            <span class="tag">[Month Year]</span>
-            <img src="assets/images/photo-7.svg" alt="Placeholder — replace with a photo from this event">
+            <span class="tag">Recent</span>
+            <img src="assets/images/photo-7.svg" alt="Placeholder photo — a photo from this event">
           </div>
           <div class="card-body">
-            <h3>[Past Event Name] <span class="placeholder-note">Placeholder</span></h3>
+            <h3>Event name</h3>
             <p>A line or two on how it went and roughly how many people came.</p>
             <a class="link-arrow" href="gallery.html">See the photos</a>
           </div>
@@ -398,7 +338,6 @@
         <p class="footer-about">
           A club of young people in Honiara giving their time to community projects, growing as
           leaders, and having a good time along the way.
-          <span class="placeholder-note">Placeholder</span>
         </p>
         <div class="footer-social-row">
           <a href="https://www.instagram.com/rotaractclubsi/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
@@ -444,7 +383,7 @@
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-            <span>Club meetings: [day &amp; time]</span>
+            <span>Meets regularly &mdash; see <a href="events.html">Events</a> for the next date</span>
           </li>
         </ul>
         <a href="contact.html#support" class="btn btn-gold btn-sm" style="margin-top:1rem;">Support Us</a>

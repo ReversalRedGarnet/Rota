@@ -1741,3 +1741,193 @@ p { text-wrap: pretty; }
   word-break: break-word;
   overflow-wrap: anywhere;
 }
+
+/* --------------------------------------------------------------------------
+   32. UI POLISH — header scroll state, nav CTA emphasis, hover refinements
+   -------------------------------------------------------------------------- */
+
+/* Header gains a touch more depth once the page has scrolled, instead of
+   the flat 1px border it starts with. Background/blur stay the same. */
+.site-header.is-scrolled { box-shadow: var(--shadow); }
+
+/* "Join Us" reads as a small pill so the membership CTA stands out among
+   plain text links, without adding a second loud button next to Support Us. */
+.nav-menu a.nav-join {
+  background: var(--gold-pale);
+  color: var(--maroon-deep);
+  font-weight: 700;
+}
+.nav-menu a.nav-join:hover { background: var(--gold-bright); color: var(--maroon-deep); }
+.nav-menu a.nav-join[aria-current="page"]::after { display: none; }
+
+/* Card / pillar hover: a slightly smaller, consistent lift than the 4px
+   default, plus a very subtle image zoom contained by the card's overflow. */
+.card:hover,
+.pillar:hover { transform: translateY(-3px); }
+.card-media { overflow: hidden; }
+.card-media img { transition: transform 0.35s var(--ease); }
+.card:hover .card-media img { transform: scale(1.035); }
+
+/* Event rows (homepage preview + past-events list) get the same restrained
+   lift as cards, for a consistent feel across list-style content. */
+.event {
+  transition: transform 0.22s var(--ease), box-shadow 0.22s var(--ease);
+}
+.event:hover { transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+
+/* --------------------------------------------------------------------------
+   33. EVENTS CALENDAR
+   -------------------------------------------------------------------------- */
+.calendar {
+  background: var(--cream);
+  border: 1px solid var(--cream-3);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: clamp(1rem, 3vw, 1.75rem);
+}
+
+.calendar-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.calendar-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 0.9rem + 0.6vw, 1.4rem);
+  color: var(--maroon-deep);
+  text-align: center;
+  flex: 1;
+}
+.calendar-nav {
+  width: 44px;
+  height: 44px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid var(--cream-3);
+  background: var(--cream);
+  color: var(--maroon);
+  cursor: pointer;
+  transition: background-color 0.18s var(--ease), border-color 0.18s var(--ease), transform 0.15s var(--ease);
+}
+.calendar-nav svg { width: 18px; height: 18px; }
+.calendar-nav:hover { background: var(--cream-2); border-color: var(--maroon-soft); }
+.calendar-nav:active { transform: scale(0.94); }
+.calendar-nav:focus-visible { outline: 2px solid var(--maroon); outline-offset: 2px; }
+
+.calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-align: center;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--cream-3);
+  margin-bottom: 3px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3px;
+}
+
+.cal-cell {
+  aspect-ratio: 1 / 1;
+  min-height: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.4rem 0.2rem;
+  background: var(--cream);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  color: var(--ink);
+  transition: background-color 0.18s var(--ease), border-color 0.18s var(--ease);
+}
+button.cal-cell { cursor: pointer; }
+button.cal-cell:hover { background: var(--cream-2); }
+button.cal-cell:focus-visible { outline: 2px solid var(--maroon); outline-offset: 2px; }
+
+.cal-cell.is-muted { color: var(--ink-soft); opacity: 0.38; }
+
+.cal-daynum { font-size: 0.82rem; font-weight: 600; line-height: 1.4; }
+.cal-cell.is-today .cal-daynum {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--maroon);
+  color: var(--on-dark);
+}
+
+.cal-cell.has-events { background: var(--gold-pale); border-color: var(--gold); }
+.cal-cell.has-events:hover { background: var(--gold-bright); }
+
+.cal-events {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  width: 100%;
+}
+.cal-event-pill {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--maroon-deep);
+  background: rgba(252, 247, 238, 0.65);
+  border-radius: 4px;
+  padding: 0.05rem 0.3rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.calendar-detail { margin-top: 1.5rem; }
+.calendar-detail:not([hidden]) {
+  border-top: 1px solid var(--cream-3);
+  padding-top: 1.25rem;
+}
+.cal-detail-date { font-weight: 700; color: var(--maroon); margin-bottom: 0.75rem; font-size: 0.92rem; }
+.cal-detail-card {
+  background: var(--cream-2);
+  border: 1px solid var(--cream-3);
+  border-radius: var(--radius-sm);
+  padding: 1.1rem 1.25rem;
+}
+.cal-detail-card + .cal-detail-card { margin-top: 0.75rem; }
+.cal-detail-card h3 { margin-top: 0.4rem; font-size: 1.05rem; }
+.cal-detail-card .event-meta { margin: 0.5rem 0 0; }
+.cal-detail-card p { font-size: 0.92rem; color: var(--ink-soft); margin-top: 0.4rem; }
+
+@media (max-width: 619px) {
+  .calendar-nav { width: 40px; height: 40px; }
+  .cal-cell { padding: 0.3rem 0.15rem; }
+  .cal-daynum { font-size: 0.76rem; }
+  .calendar-weekdays { font-size: 0.6rem; }
+
+  /* Pills don't fit at this width — collapse events to a single dot so the
+     grid stays a recognisable calendar instead of an unreadable list. */
+  .cal-events { display: none; }
+  .cal-cell.has-events { position: relative; }
+  .cal-cell.has-events::after {
+    content: "";
+    position: absolute;
+    bottom: 5px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--maroon);
+  }
+}
