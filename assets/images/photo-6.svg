@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="1200" height="900" role="img" aria-label="Placeholder image">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#731815"/><stop offset="1" stop-color="#9E2A22"/>
+    </linearGradient>
+    <pattern id="w" width="56" height="56" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="56" height="56" fill="none"/>
+      <rect width="28" height="56" fill="#E8C06A" opacity="0.05"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="900" fill="url(#g)"/>
+  <rect width="1200" height="900" fill="url(#w)"/>
+  <g transform="translate(600 390)" fill="none" stroke="#E8C06A" stroke-width="7" opacity="0.6" stroke-linejoin="round">
+    <rect x="-80" y="-56" width="160" height="118" rx="14"/>
+    <circle cx="0" cy="6" r="34"/>
+    <path d="M-44 -56 l16 -26 h56 l16 26" stroke-linecap="round"/>
+  </g>
+  <text x="600" y="546" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="40" font-weight="800" letter-spacing="7" fill="#E8C06A" opacity="0.92">PLACEHOLDER</text>
+  <text x="600" y="600" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="30" font-weight="500" letter-spacing="3" fill="#FCF7EE" opacity="0.66">Fundraiser photo</text>
+  <text x="600" y="660" text-anchor="middle" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="23" font-weight="400" fill="#FCF7EE" opacity="0.42">Replace this file with a real club photo</text>
+</svg>

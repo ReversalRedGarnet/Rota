@@ -1,107 +1,546 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects & Impact — Rotaract Club of Honiara</title>
-  <meta name="description" content="Explore the Rotaract Club of Honiara's community projects and their impact.">
-  <link rel="icon" href="assets/logo/favicon.png">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects &amp; Impact — Rotaract Club of Honiara</title>
+<meta name="description" content="Community projects run by the Rotaract Club of Honiara — what we did, who it helped, and what came of it.">
+
+<!-- Social preview (shows when someone shares the link on Facebook/Instagram) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Projects &amp; Impact — Rotaract Club of Honiara">
+<meta property="og:description" content="Community projects run by the Rotaract Club of Honiara — what we did, who it helped, and what came of it.">
+<meta property="og:image" content="assets/logo/logo.png">
+
+<link rel="icon" href="assets/logo/favicon.png" type="image/png">
+
+<!-- Fonts: Source Serif 4 (headings) + Inter (body) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ============================ HEADER / NAV ============================ -->
-  <header class="site-header">
-    <nav class="nav">
-      <a href="index.html" class="nav-logo">
-        <img src="assets/logo/logo.png" alt="Rotaract Club of Honiara logo">
-        Rotaract Honiara
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ==========================================================================
+     TOP BAR
+     This same block appears on every page. If you change it, change it
+     everywhere (or leave it alone — it rarely needs editing).
+     ========================================================================== -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span class="topbar-loc">Honiara, Solomon Islands &middot; District 9910</span>
+    <div class="topbar-social">
+      <!-- REPLACE the two "#" links below with your real Instagram and Facebook page URLs -->
+      <a href="https://www.instagram.com/rotaractclubsi/" target="_blank" rel="noopener" aria-label="Rotaract Club of Honiara on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        <span class="label">Instagram</span>
       </a>
-
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="projects.html">Projects & Impact</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="members.html">Members</a></li>
-        <li><a href="join.html">Join Rotaract</a></li>
-        <li><a href="news.html">News</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="partners.html">Partners</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-
-      <a href="contact.html#support" class="nav-cta">Support Us</a>
-
-      <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
-    </nav>
-  </header>
-
-  <!-- ============================ PAGE HERO ============================ -->
-  <section class="hero">
-    <div class="container">
-      <span class="badge">Rotaract Club of Honiara</span>
-      <h1>Projects & Impact</h1>
-      <p>The work we've done and the difference it's made. <span class="placeholder-note">Placeholder page</span></p>
+      <a href="https://www.facebook.com/RotaractHoniara/" target="_blank" rel="noopener" aria-label="Rotaract Club of Honiara on Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        <span class="label">Facebook</span>
+      </a>
+      <a href="https://www.tiktok.com/@officialrotaractclubofsi" target="_blank" rel="noopener" aria-label="Rotaract Club of Honiara on TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97a10.3 10.3 0 0 1-1.62-.93c-.01 2.92.01 5.84-.02 8.75a7.55 7.55 0 0 1-1.35 3.94 7.4 7.4 0 0 1-5.91 3.21 7.3 7.3 0 0 1-4.08-1.03 7.72 7.72 0 0 1-3.65-5.71c-.02-.5-.03-1-.01-1.49a7.6 7.6 0 0 1 2.58-4.96 7.42 7.42 0 0 1 6.15-1.72c.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61a3.5 3.5 0 0 0 3.5 2.87 3.32 3.32 0 0 0 2.77-1.61c.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07L16.44 0z"/></svg>
+        <span class="label">TikTok</span>
+      </a>
+      <a href="mailto:club-email@example.com" aria-label="Email the club">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        <span class="label">Email</span>
+      </a>
     </div>
-  </section>
+  </div>
+</div>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">Coming Soon</span>
-        <h2>This page is a placeholder</h2>
-      </div>
-      <p style="text-align:center; max-width:500px; margin:0 auto; opacity:0.8;">
-        Build out this section's content and layout here — cards, lists, forms, etc.
-        depending on the page.
+<!-- ==========================================================================
+     HEADER / NAVIGATION
+     ========================================================================== -->
+<header class="site-header">
+  <nav class="nav" aria-label="Main navigation">
+    <a href="index.html" class="brand">
+      <img src="assets/logo/logo.png" alt="Rotaract Club of Honiara crest">
+      <span class="brand-text">
+        <span class="brand-name">Rotaract Honiara</span>
+        <span class="brand-sub">Solomon Islands</span>
+      </span>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html" aria-current="page">Projects</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="join.html">Join Us</a></li>
+      <li>
+        <button class="submenu-btn" aria-expanded="false" aria-controls="more-menu">
+          More <span class="caret" aria-hidden="true">▾</span>
+        </button>
+        <ul class="submenu" id="more-menu">
+          <li><a href="members.html">Our Members</a></li>
+          <li><a href="news.html">News &amp; Updates</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="partners.html">Partners</a></li>
+        </ul>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <a href="contact.html#support" class="btn btn-maroon btn-sm nav-cta">Support Us</a>
+
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<!-- Mobile drawer: every page listed flat, no nested menus -->
+<div class="mobile-nav" id="mobile-nav">
+  <div class="mobile-nav-top">
+    <span class="brand-text">
+      <span class="brand-name">Rotaract Honiara</span>
+      <span class="brand-sub">Solomon Islands</span>
+    </span>
+    <button class="mobile-close" aria-label="Close menu">&times;</button>
+  </div>
+  <ul class="mobile-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="projects.html" aria-current="page">Projects &amp; Impact</a></li>
+    <li><a href="events.html">Events</a></li>
+    <li><a href="members.html">Our Members</a></li>
+    <li><a href="join.html">Join Rotaract</a></li>
+    <li><a href="news.html">News &amp; Updates</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="partners.html">Partners</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="mobile-actions">
+    <a href="contact.html#support" class="btn btn-gold">Support Us</a>
+    <a href="join.html" class="btn btn-ghost">Join the Club</a>
+  </div>
+  <div class="mobile-social">
+    <a href="https://www.instagram.com/rotaractclubsi/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg> Instagram</a>
+    <a href="https://www.facebook.com/RotaractHoniara/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook</a>
+    <a href="https://www.tiktok.com/@officialrotaractclubofsi" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97a10.3 10.3 0 0 1-1.62-.93c-.01 2.92.01 5.84-.02 8.75a7.55 7.55 0 0 1-1.35 3.94 7.4 7.4 0 0 1-5.91 3.21 7.3 7.3 0 0 1-4.08-1.03 7.72 7.72 0 0 1-3.65-5.71c-.02-.5-.03-1-.01-1.49a7.6 7.6 0 0 1 2.58-4.96 7.42 7.42 0 0 1 6.15-1.72c.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61a3.5 3.5 0 0 0 3.5 2.87 3.32 3.32 0 0 0 2.77-1.61c.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07L16.44 0z"/></svg> TikTok</a>
+  </div>
+</div>
+
+<main id="main">
+
+  <!-- ========================================================================
+       PAGE HERO
+       ======================================================================== -->
+  <section class="page-hero rays">
+    <div class="wrap">
+      <div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Projects &amp; Impact</div>
+      <span class="eyebrow">Projects &amp; impact</span>
+      <h1>The work, and what came of it</h1>
+      <p>
+        Every project here was proposed, planned and run by our own members. We've included what
+        went well and what we'd do differently — because that's the honest version.
+        <span class="placeholder-note">Placeholder copy</span>
       </p>
     </div>
   </section>
 
-  <!-- ============================ FOOTER ============================ -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h4>Rotaract Club of Honiara</h4>
-          <p style="opacity:0.85; font-size:0.9rem; max-width:320px;">
-            Empowering young professionals in Honiara through service, leadership,
-            and fellowship. <span class="placeholder-note">Placeholder</span>
-          </p>
-          <div class="footer-social">
-            <a href="#" aria-label="Instagram">Instagram</a>
-            <a href="#" aria-label="Facebook">Facebook</a>
-            <a href="mailto:info@rotaracthoniara.org">Email</a>
-          </div>
-        </div>
-        <div>
-          <h4>Explore</h4>
-          <ul>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="projects.html">Projects & Impact</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="members.html">Members</a></li>
-            <li><a href="join.html">Join Rotaract</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>What We Stand For</h4>
-          <ul>
-            <li>Service Above Self</li>
-            <li>Youth Leadership</li>
-            <li>Community Fellowship</li>
-            <li>Integrity & Accountability</li>
-          </ul>
-        </div>
+  <!-- ========================================================================
+       IMPACT SUMMARY
+       ======================================================================== -->
+  <div class="stats-bar">
+    <div class="wrap">
+      <div class="stats-inner">
+        <div class="stat"><div class="stat-num">00</div><div class="stat-label">Projects Delivered</div></div>
+        <div class="stat"><div class="stat-num">000</div><div class="stat-label">People Reached</div></div>
+        <div class="stat"><div class="stat-num">000</div><div class="stat-label">Volunteer Hours</div></div>
+        <div class="stat"><div class="stat-num">00</div><div class="stat-label">Communities Served</div></div>
       </div>
-      <div class="footer-bottom">
-        &copy; 2026 Rotaract Club of Honiara. All rights reserved.
+      <p class="center muted" style="font-size:0.8rem; margin-top:0.85rem;">
+        <span class="placeholder-note">Placeholder figures</span>
+        Donors and partners look closely at this row — only publish numbers the club can back up.
+      </p>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       ALL PROJECTS — filterable
+       ======================================================================== -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Our projects</span>
+        <h2>Browse everything we've run</h2>
+        <p>Filter by the kind of work, or scroll through the lot.</p>
+      </div>
+
+      <!-- Filter buttons. The data-filter value must match a data-category
+           value on the cards below. -->
+      <div class="filters" data-filter-group="#project-list" role="group" aria-label="Filter projects">
+        <button class="filter-btn" data-filter="all" aria-pressed="true">All projects</button>
+        <button class="filter-btn" data-filter="community" aria-pressed="false">Community</button>
+        <button class="filter-btn" data-filter="education" aria-pressed="false">Education</button>
+        <button class="filter-btn" data-filter="health" aria-pressed="false">Health</button>
+        <button class="filter-btn" data-filter="environment" aria-pressed="false">Environment</button>
+        <button class="filter-btn" data-filter="fundraising" aria-pressed="false">Fundraising</button>
+      </div>
+
+      <div class="grid grid-3" id="project-list">
+
+        <!-- ===== PROJECT CARD — copy this whole block to add a project =====
+             1. Change data-category to one of the filter values above.
+             2. Swap the image file in assets/images/.
+             3. Edit the tag, title, story and outcome chips. -->
+        <article class="card reveal" data-category="community">
+          <div class="card-media">
+            <span class="tag">Ongoing</span>
+            <img src="assets/images/photo-1.svg" alt="Placeholder — replace with a photo from this project">
+          </div>
+          <div class="card-body">
+            <h3>[Project Name] <span class="placeholder-note">Placeholder</span></h3>
+            <p>
+              A short story: what the need was, what the club did about it, and who was involved.
+              Three or four lines is plenty here — the detail can go in a news post.
+            </p>
+            <div class="outcomes">
+              <span class="outcome">000 people reached (placeholder)</span>
+              <span class="outcome">00 volunteers (placeholder)</span>
+              <span class="outcome">[Partner] (placeholder)</span>
+            </div>
+          </div>
+        </article>
+        <!-- ===== END PROJECT CARD ===== -->
+
+        <article class="card reveal" data-category="education">
+          <div class="card-media">
+            <span class="tag">Completed</span>
+            <img src="assets/images/photo-2.svg" alt="Placeholder — replace with a photo from this project">
+          </div>
+          <div class="card-body">
+            <h3>[Project Name] <span class="placeholder-note">Placeholder</span></h3>
+            <p>
+              A short story: what the need was, what the club did about it, and who was involved.
+              Three or four lines is plenty here — the detail can go in a news post.
+            </p>
+            <div class="outcomes">
+              <span class="outcome">00 students supported (placeholder)</span>
+              <span class="outcome">0 schools (placeholder)</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-category="health">
+          <div class="card-media">
+            <span class="tag">Annual</span>
+            <img src="assets/images/photo-3.svg" alt="Placeholder — replace with a photo from this project">
+          </div>
+          <div class="card-body">
+            <h3>[Project Name] <span class="placeholder-note">Placeholder</span></h3>
+            <p>
+              A short story: what the need was, what the club did about it, and who was involved.
+              Three or four lines is plenty here — the detail can go in a news post.
+            </p>
+            <div class="outcomes">
+              <span class="outcome">000 attended (placeholder)</span>
+              <span class="outcome">[Health partner] (placeholder)</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-category="environment">
+          <div class="card-media">
+            <span class="tag">Ongoing</span>
+            <img src="assets/images/photo-5.svg" alt="Placeholder — replace with a photo from this project">
+          </div>
+          <div class="card-body">
+            <h3>[Project Name] <span class="placeholder-note">Placeholder</span></h3>
+            <p>
+              A short story: what the need was, what the club did about it, and who was involved.
+              Three or four lines is plenty here — the detail can go in a news post.
+            </p>
+            <div class="outcomes">
+              <span class="outcome">00 clean-up days (placeholder)</span>
+              <span class="outcome">00 volunteers (placeholder)</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-category="fundraising">
+          <div class="card-media">
+            <span class="tag">Annual</span>
+            <img src="assets/images/photo-6.svg" alt="Placeholder — replace with a photo from this project">
+          </div>
+          <div class="card-body">
+            <h3>[Project Name] <span class="placeholder-note">Placeholder</span></h3>
+            <p>
+              A short story: what the need was, what the club did about it, and who was involved.
+              Three or four lines is plenty here — the detail can go in a news post.
+            </p>
+            <div class="outcomes">
+              <span class="outcome">Funds raised: [amount] (placeholder)</span>
+              <span class="outcome">All proceeds to [cause] (placeholder)</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" data-category="community education">
+          <div class="card-media">
+            <span class="tag">Completed</span>
+            <img src="assets/images/photo-8.svg" alt="Placeholder — replace with a photo from this project">
+          </div>
+          <div class="card-body">
+            <h3>[Project Name] <span class="placeholder-note">Placeholder</span></h3>
+            <p>
+              A short story: what the need was, what the club did about it, and who was involved.
+              Three or four lines is plenty here — the detail can go in a news post.
+            </p>
+            <div class="outcomes">
+              <span class="outcome">000 people reached (placeholder)</span>
+              <span class="outcome">00 volunteers (placeholder)</span>
+            </div>
+          </div>
+        </article>
+
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script src="js/main.js"></script>
+  <!-- ========================================================================
+       IMPACT STORY — the long-form version, for donors and partners
+       ======================================================================== -->
+  <section class="section section-alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Impact story</span>
+        <h2>One project, in full</h2>
+        <p>
+          Worth writing up one or two projects properly like this. It's what a funder reads before
+          deciding whether to back you.
+        </p>
+      </div>
+
+      <div class="split reveal">
+        <figure class="split-media">
+          <img src="assets/images/photo-4.svg" alt="Placeholder — replace with the best photo from this project">
+        </figure>
+        <div>
+          <span class="tag tag-maroon">[Category]</span>
+          <h2 style="margin-top:0.9rem; font-size:clamp(1.4rem,1.15rem+1.1vw,1.9rem);">
+            [Project Name] <span class="placeholder-note">Placeholder</span>
+          </h2>
+
+          <h3 style="font-size:1rem; margin-top:1.4rem; color:var(--maroon-soft);">The need</h3>
+          <p style="margin-top:0.35rem;">What the situation was before the club got involved, and how we came to hear about it.</p>
+
+          <h3 style="font-size:1rem; margin-top:1.1rem; color:var(--maroon-soft);">What we did</h3>
+          <p style="margin-top:0.35rem;">The actual work — how many members, over how long, with which partners, and what it cost.</p>
+
+          <h3 style="font-size:1rem; margin-top:1.1rem; color:var(--maroon-soft);">What changed</h3>
+          <p style="margin-top:0.35rem;">The outcome in plain terms, plus anything that didn't go to plan and what we learned from it.</p>
+
+          <div class="outcomes" style="margin-top:1.25rem;">
+            <span class="outcome">000 people reached (placeholder)</span>
+            <span class="outcome">00 volunteer hours (placeholder)</span>
+            <span class="outcome">[Amount] invested (placeholder)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       HOW WE WORK — accountability
+       ======================================================================== -->
+  <section class="section section-dark rays" style="position:relative; overflow:hidden;">
+    <div class="wrap" style="position:relative; z-index:1;">
+      <div class="section-head reveal">
+        <span class="eyebrow">How we work</span>
+        <h2>Where the money and the hours go</h2>
+        <p>If you're considering funding or partnering with us, this is the part that matters.</p>
+      </div>
+
+      <ol class="steps">
+        <li class="step reveal">
+          <span class="step-num">01</span>
+          <h3>Every project has a named lead</h3>
+          <p>One member owns each project end to end, and reports to the board on it. <span class="placeholder-note">Placeholder</span></p>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">02</span>
+          <h3>Budgets are approved before we start</h3>
+          <p>Nothing gets spent without the club agreeing to it first. <span class="placeholder-note">Placeholder</span></p>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">03</span>
+          <h3>Sponsors get a written report</h3>
+          <p>Photos, receipts and outcomes — sent after the project, not just asked for at the start. <span class="placeholder-note">Placeholder</span></p>
+        </li>
+        <li class="step reveal">
+          <span class="step-num">04</span>
+          <h3>We publish what we did</h3>
+          <p>Results go on this site and our social channels so anyone can check. <span class="placeholder-note">Placeholder</span></p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       PARTNER VOICE
+       ======================================================================== -->
+  <section class="section">
+    <div class="wrap">
+      <div class="grid grid-3">
+        <figure class="quote-card reveal">
+          <blockquote>A quote from a community member or beneficiary about the difference a project made.</blockquote>
+          <figcaption class="quote-person">
+            <img src="assets/images/portrait-2.svg" alt="Placeholder portrait">
+            <span><span class="quote-name">[Full Name]</span><br><span class="quote-role">[Community member]</span></span>
+          </figcaption>
+        </figure>
+        <figure class="quote-card reveal">
+          <blockquote>A quote from a partner organisation about what it's like working with the club.</blockquote>
+          <figcaption class="quote-person">
+            <img src="assets/images/portrait-5.svg" alt="Placeholder portrait">
+            <span><span class="quote-name">[Full Name]</span><br><span class="quote-role">[Role, Partner Organisation]</span></span>
+          </figcaption>
+        </figure>
+        <figure class="quote-card reveal">
+          <blockquote>A quote from a club member about what running a project taught them.</blockquote>
+          <figcaption class="quote-person">
+            <img src="assets/images/portrait-9.svg" alt="Placeholder portrait">
+            <span><span class="quote-name">[Full Name]</span><br><span class="quote-role">[Club member]</span></span>
+          </figcaption>
+        </figure>
+      </div>
+      <p class="center muted" style="font-size:0.82rem; margin-top:1.25rem;">
+        <span class="placeholder-note">Placeholder</span> Always get permission before publishing someone's name, photo or quote.
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       CTA
+       ======================================================================== -->
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="cta rays reveal">
+        <h2>Want to fund or partner on a project?</h2>
+        <p>
+          We're always looking for organisations to work alongside — whether that's funding,
+          materials, expertise or just opening a door. Tell us what you have in mind.
+        </p>
+        <div class="btn-row">
+          <a href="contact.html#support" class="btn btn-gold">Support a project</a>
+          <a href="partners.html" class="btn btn-ghost">See our partners</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ==========================================================================
+     SOCIAL STRIP — appears near the bottom of every page
+     ========================================================================== -->
+<section class="social-strip">
+  <div class="wrap social-strip-inner">
+    <div>
+      <h2>The day-to-day lives on our socials</h2>
+      <p>Follow along for photos, event reminders and last-minute call-outs for volunteers.</p>
+    </div>
+    <div class="social-btns">
+      <a href="https://www.instagram.com/rotaractclubsi/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg> Instagram</a>
+      <a href="https://www.facebook.com/RotaractHoniara/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook</a>
+      <a href="https://www.tiktok.com/@officialrotaractclubofsi" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97a10.3 10.3 0 0 1-1.62-.93c-.01 2.92.01 5.84-.02 8.75a7.55 7.55 0 0 1-1.35 3.94 7.4 7.4 0 0 1-5.91 3.21 7.3 7.3 0 0 1-4.08-1.03 7.72 7.72 0 0 1-3.65-5.71c-.02-.5-.03-1-.01-1.49a7.6 7.6 0 0 1 2.58-4.96 7.42 7.42 0 0 1 6.15-1.72c.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61a3.5 3.5 0 0 0 3.5 2.87 3.32 3.32 0 0 0 2.77-1.61c.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07L16.44 0z"/></svg> TikTok</a>
+      <a href="mailto:club-email@example.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg> Email us</a>
+    </div>
+  </div>
+</section>
+
+<div class="weave" aria-hidden="true"></div>
+
+<!-- ==========================================================================
+     FOOTER — identical on every page
+     ========================================================================== -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+
+      <div>
+        <div class="footer-brand">
+          <img src="assets/logo/logo.png" alt="">
+          <span class="brand-text">
+            <span class="brand-name">Rotaract Honiara</span>
+            <span class="brand-sub">Solomon Islands</span>
+          </span>
+        </div>
+        <p class="footer-about">
+          A club of young people in Honiara giving their time to community projects, growing as
+          leaders, and having a good time along the way.
+          <span class="placeholder-note">Placeholder</span>
+        </p>
+        <div class="footer-social-row">
+          <a href="https://www.instagram.com/rotaractclubsi/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://www.facebook.com/RotaractHoniara/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.tiktok.com/@officialrotaractclubofsi" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97a10.3 10.3 0 0 1-1.62-.93c-.01 2.92.01 5.84-.02 8.75a7.55 7.55 0 0 1-1.35 3.94 7.4 7.4 0 0 1-5.91 3.21 7.3 7.3 0 0 1-4.08-1.03 7.72 7.72 0 0 1-3.65-5.71c-.02-.5-.03-1-.01-1.49a7.6 7.6 0 0 1 2.58-4.96 7.42 7.42 0 0 1 6.15-1.72c.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61a3.5 3.5 0 0 0 3.5 2.87 3.32 3.32 0 0 0 2.77-1.61c.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07L16.44 0z"/></svg></a>
+          <a href="mailto:club-email@example.com" aria-label="Email"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="projects.html">Projects &amp; Impact</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="members.html">Our Members</a></li>
+          <li><a href="news.html">News &amp; Updates</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>What we stand for</h4>
+        <ul class="footer-values">
+          <li>Service above self</li>
+          <li>Young people leading</li>
+          <li>Doing what we said we'd do</li>
+          <li>Open about our money</li>
+          <li>Everyone's welcome</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <ul class="footer-contact">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Honiara, Solomon Islands</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            <a href="mailto:club-email@example.com">club-email@example.com</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>Club meetings: [day &amp; time]</span>
+          </li>
+        </ul>
+        <a href="contact.html#support" class="btn btn-gold btn-sm" style="margin-top:1rem;">Support Us</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div>&copy; <span data-year>2026</span> Rotaract Club of Honiara.</div>
+      <div class="rotary-note">
+        Part of Rotaract, the young people's programme of <a href="https://www.rotary.org" target="_blank" rel="noopener">Rotary International</a>.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>
