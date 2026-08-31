@@ -21,7 +21,7 @@ index.html      Home
 about.html      About Us
 projects.html   Projects & Impact      <- the page donors and sponsors read
 events.html     Events
-members.html    Our Members
+leadership.html Our Leadership
 join.html       Join Rotaract
 news.html       News & Updates
 gallery.html    Gallery
@@ -175,7 +175,7 @@ is fake and must be replaced. To find them all, search the folder for
 - [ ] **Sponsoring Rotary club and district number** on `about.html`
 - [ ] **Real projects** with photos and outcomes on `projects.html`
 - [ ] **Real events**, dates and venues on `events.html`
-- [ ] **Member photos, names and roles** on `members.html` and `about.html`
+- [ ] **Member photos, names and roles** on `leadership.html` and `about.html`
 - [ ] **Membership age range and fee** on `join.html`
 - [ ] **Meeting day, time and venue** on `contact.html` and in every footer
 - [ ] **Partner names and logos** on `partners.html` and `index.html`
