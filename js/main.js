@@ -316,25 +316,14 @@
 
     function pad(n) { return n < 10 ? "0" + n : "" + n; }
 
-    // Sample events — replace with the club's real dates, or add more by
-    // copying a line. "date" must be YYYY-MM-DD. Days are anchored to the
-    // current month (clamped to however many days it has) so a few sample
-    // events are always visible on the month shown when the page loads,
-    // whatever today's date happens to be.
     var now = new Date();
-    var sampleYear = now.getFullYear();
-    var sampleMonth = now.getMonth();
-    var daysInSampleMonth = new Date(sampleYear, sampleMonth + 1, 0).getDate();
-    function sampleDate(day) {
-      var d = Math.min(day, daysInSampleMonth);
-      return sampleYear + "-" + pad(sampleMonth + 1) + "-" + pad(d);
-    }
 
     var CALENDAR_EVENTS = [
-      { date: sampleDate(5), title: "Club meeting", time: "5:30 PM", location: "Honiara", tag: "Club Meeting", description: "Our regular get-together — plan projects, hear from a guest, catch up." },
-      { date: sampleDate(12), title: "Community clean-up", time: "8:00 AM", location: "Honiara", tag: "Volunteering", description: "A hands-on volunteering morning. Anyone can join in, member or not." },
-      { date: sampleDate(19), title: "Fundraising night", time: "6:00 PM", location: "Honiara", tag: "Fundraiser", description: "Proceeds go straight into current projects." },
-      { date: sampleDate(26), title: "Social night", time: "6:30 PM", location: "Honiara", tag: "Social", description: "Sport, food and good company — the bit that keeps everyone coming back." }
+      { date: "2026-09-30", title: "Club Meeting", time: "To be confirmed", location: "Venue to be confirmed", tag: "Club Meeting", description: "Our regular get-together — plan projects, hear from a guest, catch up." },
+      { date: "2026-10-07", title: "Club Meeting", time: "To be confirmed", location: "Venue to be confirmed", tag: "Club Meeting", description: "Our regular get-together — plan projects, hear from a guest, catch up." },
+      { date: "2026-10-21", title: "Club Meeting", time: "To be confirmed", location: "Venue to be confirmed", tag: "Club Meeting", description: "Our regular get-together — plan projects, hear from a guest, catch up." },
+      { date: "2026-11-04", title: "Club Meeting", time: "To be confirmed", location: "Venue to be confirmed", tag: "Club Meeting", description: "Our regular get-together — plan projects, hear from a guest, catch up." },
+      { date: "2026-11-18", title: "Club Meeting", time: "To be confirmed", location: "Venue to be confirmed", tag: "Club Meeting", description: "Our regular get-together — plan projects, hear from a guest, catch up." }
     ];
 
     var eventsByDate = {};
@@ -425,7 +414,7 @@
           '<article class="cal-detail-card">' +
             '<span class="tag tag-outline">' + ev.tag + "</span>" +
             "<h3>" + ev.title + "</h3>" +
-            '<div class="event-meta"><span>🕒 ' + ev.time + '</span><span>📍 ' + ev.location + "</span></div>" +
+            '<div class="event-meta"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> ' + ev.time + '</span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> ' + ev.location + "</span></div>" +
             "<p>" + ev.description + "</p>" +
           "</article>"
         );

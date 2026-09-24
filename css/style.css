@@ -1137,6 +1137,7 @@ p { text-wrap: pretty; }
   color: var(--ink-soft);
 }
 .event-meta span { display: inline-flex; align-items: center; gap: 0.35rem; }
+.event-meta svg { width: 14px; height: 14px; flex: none; color: var(--maroon); }
 .event-body p { font-size: 0.94rem; color: var(--ink-soft); }
 
 @media (min-width: 620px) {
@@ -1550,6 +1551,27 @@ p { text-wrap: pretty; }
   font-size: var(--t-lg);
 }
 .cta .btn-row { margin-top: 1.75rem; justify-content: center; }
+.social-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+.social-links-row a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.65rem 1.25rem;
+  border: 1px solid rgba(252, 247, 238, 0.3);
+  border-radius: 999px;
+  color: var(--on-dark);
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.social-links-row a:hover { border-color: var(--gold-bright); background: rgba(252, 247, 238, 0.08); }
+.social-links-row svg { width: 18px; height: 18px; flex: none; color: var(--gold-bright); }
 
 /* Support Us highlight panel */
 .support-panel {
