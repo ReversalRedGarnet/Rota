@@ -1,0 +1,13 @@
+{
+  "members": [
+    { "image": "assets/images/portrait-1.svg", "alt": "Placeholder headshot photo", "name": "Full name", "role": "President" },
+    { "image": "assets/images/portrait-2.svg", "alt": "Placeholder headshot photo", "name": "Full name", "role": "Vice President" },
+    { "image": "assets/images/portrait-3.svg", "alt": "Placeholder headshot photo", "name": "Full name", "role": "Secretary" },
+    { "image": "assets/images/portrait-4.svg", "alt": "Placeholder headshot photo", "name": "Full name", "role": "Treasurer" },
+    { "image": "assets/images/portrait-9.svg", "alt": "Placeholder headshot photo", "name": "Full name", "role": "Immediate Past President" },
+    { "image": "assets/images/portrait-5.svg", "alt": "Placeholder headshot photo", "name": "Full name", "role": "Projects Director" },
+    { "image": "assets/images/portrait-6.svg", "alt": "Placeholder headshot photo", "name": "Full name", "role": "Membership Director" },
+    { "image": "assets/images/portrait-7.svg", "alt": "Placeholder headshot photo", "name": "Full name", "role": "Social Media Coordinator" },
+    { "image": "assets/images/portrait-8.svg", "alt": "Placeholder headshot photo", "name": "Full name", "role": "Fundraising Director" }
+  ]
+}

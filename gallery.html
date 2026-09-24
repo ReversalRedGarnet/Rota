@@ -147,10 +147,11 @@
 
   <!-- ========================================================================
        GALLERY
-       TO EDIT: each <button class="gallery-item"> is one photo.
-         - data-category  must match one of the filter buttons
-         - data-full      the large version shown when clicked
-         - data-caption   the caption under the large version
+       TO EDIT: photos live in /data/gallery.json (photos) — edit them via
+       /admin, or the file directly.
+         - category  must match one of the filter buttons
+         - image     used for both the thumbnail and the lightbox full size
+         - caption   shown under the thumbnail and in the lightbox
        ======================================================================== -->
   <section class="section">
     <div class="wrap">
@@ -165,84 +166,8 @@
         Looking for video? <a href="#video" style="text-decoration:underline;">It's further down this page</a>.
       </p>
 
-      <div class="gallery-grid" id="gallery-list">
-
-        <!-- ===== GALLERY ITEM — copy this block to add a photo ===== -->
-        <button class="gallery-item reveal" data-category="projects"
-                data-full="assets/images/square-1.svg"
-                data-caption="Caption">
-          <img src="assets/images/square-1.svg" alt="Placeholder gallery photo" loading="lazy">
-          <span class="cap">Caption</span>
-        </button>
-        <!-- ===== END GALLERY ITEM ===== -->
-
-        <button class="gallery-item reveal" data-category="projects"
-                data-full="assets/images/square-2.svg" data-caption="Caption">
-          <img src="assets/images/square-2.svg" alt="Placeholder gallery photo" loading="lazy">
-          <span class="cap">Caption</span>
-        </button>
-
-        <button class="gallery-item reveal" data-category="events"
-                data-full="assets/images/square-3.svg" data-caption="Caption">
-          <img src="assets/images/square-3.svg" alt="Placeholder gallery photo" loading="lazy">
-          <span class="cap">Caption</span>
-        </button>
-
-        <button class="gallery-item reveal" data-category="socials"
-                data-full="assets/images/square-4.svg" data-caption="Caption">
-          <img src="assets/images/square-4.svg" alt="Placeholder gallery photo" loading="lazy">
-          <span class="cap">Caption</span>
-        </button>
-
-        <button class="gallery-item reveal" data-category="events"
-                data-full="assets/images/square-5.svg" data-caption="Caption">
-          <img src="assets/images/square-5.svg" alt="Placeholder gallery photo" loading="lazy">
-          <span class="cap">Caption</span>
-        </button>
-
-        <button class="gallery-item reveal" data-category="projects"
-                data-full="assets/images/square-6.svg" data-caption="Caption">
-          <img src="assets/images/square-6.svg" alt="Placeholder gallery photo" loading="lazy">
-          <span class="cap">Caption</span>
-        </button>
-
-        <button class="gallery-item reveal" data-category="socials"
-                data-full="assets/images/square-7.svg" data-caption="Caption">
-          <img src="assets/images/square-7.svg" alt="Placeholder gallery photo" loading="lazy">
-          <span class="cap">Caption</span>
-        </button>
-
-        <button class="gallery-item reveal" data-category="events"
-                data-full="assets/images/square-8.svg" data-caption="Caption">
-          <img src="assets/images/square-8.svg" alt="Placeholder gallery photo" loading="lazy">
-          <span class="cap">Caption</span>
-        </button>
-
-        <button class="gallery-item reveal" data-category="projects"
-                data-full="assets/images/square-9.svg" data-caption="Caption">
-          <img src="assets/images/square-9.svg" alt="Placeholder gallery photo" loading="lazy">
-          <span class="cap">Caption</span>
-        </button>
-
-        <button class="gallery-item reveal" data-category="socials"
-                data-full="assets/images/square-10.svg" data-caption="Caption">
-          <img src="assets/images/square-10.svg" alt="Placeholder gallery photo" loading="lazy">
-          <span class="cap">Caption</span>
-        </button>
-
-        <button class="gallery-item reveal" data-category="events"
-                data-full="assets/images/square-11.svg" data-caption="Caption">
-          <img src="assets/images/square-11.svg" alt="Placeholder gallery photo" loading="lazy">
-          <span class="cap">Caption</span>
-        </button>
-
-        <button class="gallery-item reveal" data-category="projects"
-                data-full="assets/images/square-12.svg" data-caption="Caption">
-          <img src="assets/images/square-12.svg" alt="Placeholder gallery photo" loading="lazy">
-          <span class="cap">Caption</span>
-        </button>
-
-      </div>
+      <!-- Items are rendered from /data/gallery.json (photos) by js/main.js — edit them via /admin, not here. -->
+      <div class="gallery-grid" id="gallery-list"></div>
     </div>
   </section>
 
@@ -259,40 +184,10 @@
         </p>
       </div>
 
-      <div class="grid grid-3">
-        <article class="card reveal">
-          <div class="card-media">
-            <span class="tag">Video</span>
-            <img src="assets/images/photo-2.svg" alt="Placeholder video thumbnail">
-          </div>
-          <div class="card-body">
-            <h3>Video title</h3>
-            <p>A line about what's in the clip.</p>
-          </div>
-        </article>
-        <article class="card reveal">
-          <div class="card-media">
-            <span class="tag">Video</span>
-            <img src="assets/images/photo-5.svg" alt="Placeholder video thumbnail">
-          </div>
-          <div class="card-body">
-            <h3>Video title</h3>
-            <p>A line about what's in the clip.</p>
-          </div>
-        </article>
-        <article class="card reveal">
-          <div class="card-media">
-            <span class="tag">Video</span>
-            <img src="assets/images/photo-8.svg" alt="Placeholder video thumbnail">
-          </div>
-          <div class="card-body">
-            <h3>Video title</h3>
-            <p>A line about what's in the clip.</p>
-          </div>
-        </article>
-      </div>
+      <!-- Cards are rendered from /data/gallery.json (videos) by js/main.js — edit them via /admin, not here. -->
+      <div class="grid grid-3" id="video-list"></div>
 
-      
+
     </div>
   </section>
 

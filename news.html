@@ -155,33 +155,15 @@
         <h2>Most recent update</h2>
       </div>
 
-      <!-- ===== FEATURED POST — swap in your newest story ===== -->
-      <article class="post-featured reveal">
-        <img src="assets/images/photo-1.svg" alt="Placeholder photo — the main photo for this story">
-        <div class="card-body">
-          <div class="post-meta">
-            <span class="tag">Project update</span>
-            <span>Date</span>
-            <span>By Author</span>
-          </div>
-          <h3 style="font-size:clamp(1.3rem,1.1rem+1vw,1.75rem);">
-            Story headline
-          </h3>
-          <p>
-            A short summary of the story will go here — what happened, who was involved, and why it mattered.
-          </p>
-          
-          <a class="link-arrow" href="#">Read the full post</a>
-        </div>
-      </article>
-      <!-- ===== END FEATURED POST ===== -->
+      <!-- Rendered from /data/news.json (featured) by js/main.js — edit it via /admin, not here. -->
+      <article class="post-featured reveal" id="featured-post"></article>
     </div>
   </section>
 
   <!-- ========================================================================
        ALL POSTS
-       TO EDIT: each <article class="card"> is one post. Copy to add another.
-       Newest first.
+       TO EDIT: posts live in /data/news.json (posts) — edit them via /admin,
+       or the file directly. Newest first.
        ======================================================================== -->
   <section class="section section-alt">
     <div class="wrap">
@@ -191,91 +173,10 @@
         
       </div>
 
-      <div class="grid grid-3">
+      <!-- Cards are rendered from /data/news.json (posts) by js/main.js — edit them via /admin, not here. -->
+      <div class="grid grid-3" id="news-list"></div>
 
-        <!-- ===== NEWS CARD — copy this block to add a post ===== -->
-        <article class="card reveal">
-          <div class="card-media">
-            <span class="tag">Announcement</span>
-            <img src="assets/images/photo-2.svg" alt="Placeholder photo — a photo for this post">
-          </div>
-          <div class="card-body">
-            <div class="post-meta"><span>Date</span></div>
-            <h3>Post headline</h3>
-            <p>A short summary of this update will go here.</p>
-            <a class="link-arrow" href="#">Read more</a>
-          </div>
-        </article>
-        <!-- ===== END NEWS CARD ===== -->
 
-        <article class="card reveal">
-          <div class="card-media">
-            <span class="tag">Project update</span>
-            <img src="assets/images/photo-3.svg" alt="Placeholder photo — a photo for this post">
-          </div>
-          <div class="card-body">
-            <div class="post-meta"><span>Date</span></div>
-            <h3>Post headline</h3>
-            <p>A short summary of this update will go here.</p>
-            <a class="link-arrow" href="#">Read more</a>
-          </div>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-media">
-            <span class="tag">Event recap</span>
-            <img src="assets/images/photo-5.svg" alt="Placeholder photo — a photo for this post">
-          </div>
-          <div class="card-body">
-            <div class="post-meta"><span>Date</span></div>
-            <h3>Post headline</h3>
-            <p>A short summary of this update will go here.</p>
-            <a class="link-arrow" href="#">Read more</a>
-          </div>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-media">
-            <span class="tag">Member story</span>
-            <img src="assets/images/photo-6.svg" alt="Placeholder photo — a photo for this post">
-          </div>
-          <div class="card-body">
-            <div class="post-meta"><span>Date</span></div>
-            <h3>Post headline</h3>
-            <p>A short summary of this update will go here.</p>
-            <a class="link-arrow" href="#">Read more</a>
-          </div>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-media">
-            <span class="tag">Thank you</span>
-            <img src="assets/images/photo-7.svg" alt="Placeholder photo — a photo for this post">
-          </div>
-          <div class="card-body">
-            <div class="post-meta"><span>Date</span></div>
-            <h3>Post headline</h3>
-            <p>A short summary of this update will go here.</p>
-            <a class="link-arrow" href="#">Read more</a>
-          </div>
-        </article>
-
-        <article class="card reveal">
-          <div class="card-media">
-            <span class="tag">Announcement</span>
-            <img src="assets/images/photo-8.svg" alt="Placeholder photo — a photo for this post">
-          </div>
-          <div class="card-body">
-            <div class="post-meta"><span>Date</span></div>
-            <h3>Post headline</h3>
-            <p>A short summary of this update will go here.</p>
-            <a class="link-arrow" href="#">Read more</a>
-          </div>
-        </article>
-
-      </div>
-
-      
     </div>
   </section>
 

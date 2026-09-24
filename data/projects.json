@@ -1,0 +1,58 @@
+{
+  "projects": [
+    {
+      "category": "community",
+      "tag": "Ongoing",
+      "image": "assets/images/photo-1.svg",
+      "alt": "Placeholder photo — a photo from this project",
+      "title": "Project title",
+      "description": "Add a short description of the project, its purpose and who it benefited.",
+      "outcomes": ["People reached", "Volunteers involved", "Partner organisation"]
+    },
+    {
+      "category": "education",
+      "tag": "Completed",
+      "image": "assets/images/photo-2.svg",
+      "alt": "Placeholder photo — a photo from this project",
+      "title": "Project title",
+      "description": "Add a short description of the project, its purpose and who it benefited.",
+      "outcomes": ["Students supported", "Schools involved"]
+    },
+    {
+      "category": "health",
+      "tag": "Annual",
+      "image": "assets/images/photo-3.svg",
+      "alt": "Placeholder photo — a photo from this project",
+      "title": "Project title",
+      "description": "Add a short description of the project, its purpose and who it benefited.",
+      "outcomes": ["People attended", "Health partner"]
+    },
+    {
+      "category": "environment",
+      "tag": "Ongoing",
+      "image": "assets/images/photo-5.svg",
+      "alt": "Placeholder photo — a photo from this project",
+      "title": "Project title",
+      "description": "Add a short description of the project, its purpose and who it benefited.",
+      "outcomes": ["Clean-up days", "Volunteers involved"]
+    },
+    {
+      "category": "fundraising",
+      "tag": "Annual",
+      "image": "assets/images/photo-6.svg",
+      "alt": "Placeholder photo — a photo from this project",
+      "title": "Project title",
+      "description": "Add a short description of the project, its purpose and who it benefited.",
+      "outcomes": ["Funds raised", "Proceeds go to a chosen cause"]
+    },
+    {
+      "category": "community education",
+      "tag": "Completed",
+      "image": "assets/images/photo-8.svg",
+      "alt": "Placeholder photo — a photo from this project",
+      "title": "Project title",
+      "description": "Add a short description of the project, its purpose and who it benefited.",
+      "outcomes": ["People reached", "Volunteers involved"]
+    }
+  ]
+}

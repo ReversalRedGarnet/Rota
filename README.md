@@ -60,9 +60,46 @@ Every repeating block is marked with a comment telling you what it is:
 ```
 
 **Copy everything between those two comment lines, paste it directly below, then
-edit the copy.** Delete a whole block the same way to remove an item. This is the
-pattern for project cards, member cards, event rows, news posts, gallery photos,
-partner logos, timeline milestones and FAQs.
+edit the copy.** Delete a whole block the same way to remove an item. This is
+still the pattern for partner logos, timeline milestones and FAQs.
+
+> Events, News, Gallery, Projects and Leadership work differently now — see
+> **Editing content with the CMS** below instead of hand-copying blocks on
+> those five pages.
+
+---
+
+## Editing content with the CMS
+
+For the content that changes most often — **Events, News, Gallery, Projects and
+Leadership (board members)** — there's a form at **`/admin`** (e.g.
+`yoursite.com/admin`) instead of editing HTML directly. It's built on
+[Decap CMS](https://decapcms.org), a free open-source editor made for exactly
+this: static sites with no database.
+
+Log in there with a GitHub account that has access to this repository, and
+you'll see one form per content type (Events, News, Gallery, Projects,
+Leadership). Add, edit or remove entries, fill in the fields, and hit save.
+
+**What "save" actually does:** it does **not** publish straight to the live
+site. It opens a **draft — a pull request against `main`** — with your
+changes. The live site is unaffected until that draft is reviewed and merged.
+This is intentional (`editorial_workflow` in `admin/config.yml`), so a typo or
+an accidental delete can't go live by itself.
+
+**Only the President or VP (or whoever the club has designated) should be the
+one merging a draft into `main`.** Everyone else with CMS access can create
+and edit drafts freely — the merge step is the approval gate.
+
+Behind the scenes, each of those five pages reads its cards from a JSON file
+in `/data/` (`events.json`, `news.json`, `gallery.json`, `projects.json`,
+`members.json`) at page load. The CMS just edits those JSON files for you —
+you never need to touch them by hand, though you still can if you'd rather.
+
+Getting `/admin` itself working (logging in with GitHub) needs a one-time
+setup step involving a small Cloudflare Worker — see
+`/oauth-worker/README.md` for that walkthrough. Until that's done, the
+`/admin` page will load but "Login with GitHub" won't work yet.
 
 ---
 

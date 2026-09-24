@@ -147,8 +147,8 @@
 
   <!-- ========================================================================
        BOARD / LEADERSHIP
-       TO EDIT: each <article class="member"> is one person. Copy a block to add
-       someone, delete a block to remove them. Photo, name and role only.
+       TO EDIT: board members live in /data/members.json — edit them via
+       /admin, or the file directly. Photo, name and role only.
        ======================================================================== -->
   <section class="section">
     <div class="wrap">
@@ -158,60 +158,8 @@
         <p>The members elected to run the club this term.</p>
       </div>
 
-      <div class="grid grid-4">
-
-        <!-- ===== MEMBER CARD (board) — copy this block to add another ===== -->
-        <article class="member member-lead reveal">
-          <img src="assets/images/portrait-1.svg" alt="Placeholder headshot photo">
-          <h3>Full name</h3>
-          <div class="role">President</div>
-        </article>
-        <!-- ===== END MEMBER CARD ===== -->
-
-        <article class="member member-lead reveal">
-          <img src="assets/images/portrait-2.svg" alt="Placeholder headshot photo">
-          <h3>Full name</h3>
-          <div class="role">Vice President</div>
-        </article>
-        <article class="member member-lead reveal">
-          <img src="assets/images/portrait-3.svg" alt="Placeholder headshot photo">
-          <h3>Full name</h3>
-          <div class="role">Secretary</div>
-        </article>
-        <article class="member member-lead reveal">
-          <img src="assets/images/portrait-4.svg" alt="Placeholder headshot photo">
-          <h3>Full name</h3>
-          <div class="role">Treasurer</div>
-        </article>
-        <!-- ===== MEMBER CARD (board) — copy this block to add another ===== -->
-        <article class="member member-lead reveal">
-          <img src="assets/images/portrait-9.svg" alt="Placeholder headshot photo">
-          <h3>Full name</h3>
-          <div class="role">Immediate Past President</div>
-        </article>
-        <!-- ===== END MEMBER CARD ===== -->
-        <article class="member member-lead reveal">
-          <img src="assets/images/portrait-5.svg" alt="Placeholder headshot photo">
-          <h3>Full name</h3>
-          <div class="role">Projects Director</div>
-        </article>
-        <article class="member member-lead reveal">
-          <img src="assets/images/portrait-6.svg" alt="Placeholder headshot photo">
-          <h3>Full name</h3>
-          <div class="role">Membership Director</div>
-        </article>
-        <article class="member member-lead reveal">
-          <img src="assets/images/portrait-7.svg" alt="Placeholder headshot photo">
-          <h3>Full name</h3>
-          <div class="role">Social Media Coordinator</div>
-        </article>
-        <article class="member member-lead reveal">
-          <img src="assets/images/portrait-8.svg" alt="Placeholder headshot photo">
-          <h3>Full name</h3>
-          <div class="role">Fundraising Director</div>
-        </article>
-
-      </div>
+      <!-- Cards are rendered from /data/members.json (members) by js/main.js — edit them via /admin, not here. -->
+      <div class="grid grid-4" id="board-list"></div>
     </div>
   </section>
 
