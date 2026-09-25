@@ -1,0 +1,157 @@
+# Decap CMS configuration for the Rotaract Club of Honiara site.
+#
+# This drives the form at /admin — it does NOT touch site colours, fonts,
+# nav or the logo. It only edits the JSON files under /data/, which the
+# pages fetch and render at load time (see js/main.js).
+#
+# Manual setup still needed before this works (not done by this commit —
+# see /oauth-worker/README.md for the full walkthrough):
+#   1. Create a GitHub OAuth App and deploy the Cloudflare Worker in
+#      /oauth-worker/ with its client ID/secret as two env vars.
+#   2. Replace base_url below with that Worker's deployed URL.
+
+backend:
+  name: github
+  repo: ReversalRedGarnet/Rota
+  branch: main
+  # REPLACE with the OAuth proxy Worker's URL once it's deployed —
+  # see /oauth-worker/README.md. Until then the "Login with GitHub"
+  # button on this page will not work.
+  base_url: https://rotaract-honiara-decap-oauth.rotaracthoniara.workers.dev
+
+# Every save opens a draft (a PR against main) instead of publishing
+# straight to the live site — someone still has to review and merge it.
+publish_mode: editorial_workflow
+
+media_folder: "assets/images"
+public_folder: "assets/images"
+
+collections:
+  - name: "events"
+    label: "Events"
+    files:
+      - name: "events"
+        label: "Events Page"
+        file: "data/events.json"
+        fields:
+          - label: "Upcoming events (shows in the calendar on events.html)"
+            name: "upcoming_events"
+            widget: "list"
+            summary: "{{title}} — {{date}}"
+            fields:
+              - { label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Time", name: "time", widget: "string", hint: "e.g. \"5:30 PM\" or \"To be confirmed\"" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+          - label: "Recent events (past-event recap cards)"
+            name: "recent_events"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "Tag", name: "tag", widget: "string", default: "Recent" }
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Photo alt text", name: "alt", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Link text", name: "link_text", widget: "string", default: "See the photos" }
+              - { label: "Link URL", name: "link_href", widget: "string", default: "gallery.html" }
+
+  - name: "news"
+    label: "News & Updates"
+    files:
+      - name: "news"
+        label: "News Page"
+        file: "data/news.json"
+        fields:
+          - label: "Featured post"
+            name: "featured"
+            widget: "object"
+            fields:
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Photo alt text", name: "alt", widget: "string" }
+              - { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Date", name: "date", widget: "string" }
+              - { label: "Author", name: "author", widget: "string" }
+              - { label: "Headline", name: "title", widget: "string" }
+              - { label: "Summary", name: "summary", widget: "text" }
+              - { label: "Link text", name: "link_text", widget: "string", default: "Read the full post" }
+              - { label: "Link URL", name: "link_href", widget: "string" }
+          - label: "All posts (archive grid)"
+            name: "posts"
+            widget: "list"
+            summary: "{{title}} — {{date}}"
+            fields:
+              - { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Photo alt text", name: "alt", widget: "string" }
+              - { label: "Date", name: "date", widget: "string" }
+              - { label: "Headline", name: "title", widget: "string" }
+              - { label: "Summary", name: "summary", widget: "text" }
+              - { label: "Link text", name: "link_text", widget: "string", default: "Read more" }
+              - { label: "Link URL", name: "link_href", widget: "string" }
+
+  - name: "gallery"
+    label: "Gallery"
+    files:
+      - name: "gallery"
+        label: "Gallery Page"
+        file: "data/gallery.json"
+        fields:
+          - label: "Photos"
+            name: "photos"
+            widget: "list"
+            summary: "{{caption}} ({{category}})"
+            fields:
+              - { label: "Category", name: "category", widget: "select", options: ["projects", "events", "socials"] }
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Photo alt text", name: "alt", widget: "string" }
+              - { label: "Caption", name: "caption", widget: "string" }
+          - label: "Videos"
+            name: "videos"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "Tag", name: "tag", widget: "string", default: "Video" }
+              - { label: "Thumbnail", name: "image", widget: "image" }
+              - { label: "Thumbnail alt text", name: "alt", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+  - name: "projects"
+    label: "Projects"
+    files:
+      - name: "projects"
+        label: "Projects Page"
+        file: "data/projects.json"
+        fields:
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            summary: "{{title}} ({{category}})"
+            fields:
+              - { label: "Category (filter value)", name: "category", widget: "string", hint: "One of: community, education, health, environment, fundraising. Space-separate to match more than one filter, e.g. \"community education\"." }
+              - { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Photo alt text", name: "alt", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Outcome chips", name: "outcomes", widget: "list", hint: "Short stats, e.g. \"People reached\"" }
+
+  - name: "members"
+    label: "Leadership"
+    files:
+      - name: "members"
+        label: "Leadership Page"
+        file: "data/members.json"
+        fields:
+          - label: "Board members"
+            name: "members"
+            widget: "list"
+            summary: "{{name}} — {{role}}"
+            fields:
+              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Photo alt text", name: "alt", widget: "string" }
+              - { label: "Full name", name: "name", widget: "string" }
+              - { label: "Role", name: "role", widget: "string" }

@@ -1,0 +1,21 @@
+{
+  "photos": [
+    { "category": "projects", "image": "assets/images/square-1.svg", "alt": "Placeholder gallery photo", "caption": "Caption" },
+    { "category": "projects", "image": "assets/images/square-2.svg", "alt": "Placeholder gallery photo", "caption": "Caption" },
+    { "category": "events", "image": "assets/images/square-3.svg", "alt": "Placeholder gallery photo", "caption": "Caption" },
+    { "category": "socials", "image": "assets/images/square-4.svg", "alt": "Placeholder gallery photo", "caption": "Caption" },
+    { "category": "events", "image": "assets/images/square-5.svg", "alt": "Placeholder gallery photo", "caption": "Caption" },
+    { "category": "projects", "image": "assets/images/square-6.svg", "alt": "Placeholder gallery photo", "caption": "Caption" },
+    { "category": "socials", "image": "assets/images/square-7.svg", "alt": "Placeholder gallery photo", "caption": "Caption" },
+    { "category": "events", "image": "assets/images/square-8.svg", "alt": "Placeholder gallery photo", "caption": "Caption" },
+    { "category": "projects", "image": "assets/images/square-9.svg", "alt": "Placeholder gallery photo", "caption": "Caption" },
+    { "category": "socials", "image": "assets/images/square-10.svg", "alt": "Placeholder gallery photo", "caption": "Caption" },
+    { "category": "events", "image": "assets/images/square-11.svg", "alt": "Placeholder gallery photo", "caption": "Caption" },
+    { "category": "projects", "image": "assets/images/square-12.svg", "alt": "Placeholder gallery photo", "caption": "Caption" }
+  ],
+  "videos": [
+    { "tag": "Video", "image": "assets/images/photo-2.svg", "alt": "Placeholder video thumbnail", "title": "Video title", "description": "A line about what's in the clip." },
+    { "tag": "Video", "image": "assets/images/photo-5.svg", "alt": "Placeholder video thumbnail", "title": "Video title", "description": "A line about what's in the clip." },
+    { "tag": "Video", "image": "assets/images/photo-8.svg", "alt": "Placeholder video thumbnail", "title": "Video title", "description": "A line about what's in the clip." }
+  ]
+}

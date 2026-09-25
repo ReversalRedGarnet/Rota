@@ -1,0 +1,21 @@
+{
+  "featured": {
+    "image": "assets/images/photo-1.svg",
+    "alt": "Placeholder photo — the main photo for this story",
+    "tag": "Project update",
+    "date": "Date",
+    "author": "Author",
+    "title": "Story headline",
+    "summary": "A short summary of the story will go here — what happened, who was involved, and why it mattered.",
+    "link_text": "Read the full post",
+    "link_href": "#"
+  },
+  "posts": [
+    { "tag": "Announcement", "image": "assets/images/photo-2.svg", "alt": "Placeholder photo — a photo for this post", "date": "Date", "title": "Post headline", "summary": "A short summary of this update will go here.", "link_text": "Read more", "link_href": "#" },
+    { "tag": "Project update", "image": "assets/images/photo-3.svg", "alt": "Placeholder photo — a photo for this post", "date": "Date", "title": "Post headline", "summary": "A short summary of this update will go here.", "link_text": "Read more", "link_href": "#" },
+    { "tag": "Event recap", "image": "assets/images/photo-5.svg", "alt": "Placeholder photo — a photo for this post", "date": "Date", "title": "Post headline", "summary": "A short summary of this update will go here.", "link_text": "Read more", "link_href": "#" },
+    { "tag": "Member story", "image": "assets/images/photo-6.svg", "alt": "Placeholder photo — a photo for this post", "date": "Date", "title": "Post headline", "summary": "A short summary of this update will go here.", "link_text": "Read more", "link_href": "#" },
+    { "tag": "Thank you", "image": "assets/images/photo-7.svg", "alt": "Placeholder photo — a photo for this post", "date": "Date", "title": "Post headline", "summary": "A short summary of this update will go here.", "link_text": "Read more", "link_href": "#" },
+    { "tag": "Announcement", "image": "assets/images/photo-8.svg", "alt": "Placeholder photo — a photo for this post", "date": "Date", "title": "Post headline", "summary": "A short summary of this update will go here.", "link_text": "Read more", "link_href": "#" }
+  ]
+}

@@ -183,9 +183,9 @@
 
   <!-- ========================================================================
        UPCOMING EVENTS — monthly calendar
-       Event data lives in js/main.js (search for CALENDAR_EVENTS). Add,
-       edit or remove events there — the grid below is built from that
-       data automatically, nothing here is hard-coded per day.
+       Event data lives in /data/events.json (upcoming_events) — edit it via
+       /admin, or the file directly. The grid below is built from that data
+       automatically by js/main.js, nothing here is hard-coded per day.
        ======================================================================== -->
   <section class="section section-alt">
     <div class="wrap">
@@ -225,41 +225,8 @@
         <p>Missed one? Here's what's been happening.</p>
       </div>
 
-      <div class="grid grid-3">
-        <article class="card reveal">
-          <div class="card-media">
-            <span class="tag">Recent</span>
-            <img src="assets/images/photo-2.svg" alt="Placeholder photo — a photo from this event">
-          </div>
-          <div class="card-body">
-            <h3>Event name</h3>
-            <p>A line or two on how it went and roughly how many people came.</p>
-            <a class="link-arrow" href="gallery.html">See the photos</a>
-          </div>
-        </article>
-        <article class="card reveal">
-          <div class="card-media">
-            <span class="tag">Recent</span>
-            <img src="assets/images/photo-5.svg" alt="Placeholder photo — a photo from this event">
-          </div>
-          <div class="card-body">
-            <h3>Event name</h3>
-            <p>A line or two on how it went and roughly how many people came.</p>
-            <a class="link-arrow" href="gallery.html">See the photos</a>
-          </div>
-        </article>
-        <article class="card reveal">
-          <div class="card-media">
-            <span class="tag">Recent</span>
-            <img src="assets/images/photo-7.svg" alt="Placeholder photo — a photo from this event">
-          </div>
-          <div class="card-body">
-            <h3>Event name</h3>
-            <p>A line or two on how it went and roughly how many people came.</p>
-            <a class="link-arrow" href="gallery.html">See the photos</a>
-          </div>
-        </article>
-      </div>
+      <!-- Cards are rendered from /data/events.json (recent_events) by js/main.js — edit them via /admin, not here. -->
+      <div class="grid grid-3" id="recent-events-list"></div>
     </div>
   </section>
 

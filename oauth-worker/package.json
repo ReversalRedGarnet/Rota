@@ -1,0 +1,12 @@
+{
+  "name": "rotaract-honiara-decap-oauth",
+  "private": true,
+  "description": "GitHub OAuth proxy Worker so Decap CMS (at /admin) can authenticate board members against the GitHub repo.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^3.0.0"
+  }
+}

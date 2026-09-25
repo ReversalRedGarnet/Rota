@@ -10,6 +10,196 @@
   "use strict";
 
   /* ------------------------------------------------------------------------
+     0. CONTENT LOADER
+     Cards that used to be hand-copied HTML blocks are now stored as JSON
+     under /data/ and edited through the CMS at /admin (see README.md).
+     Each render* function fetches its page's JSON and injects markup into
+     the existing container using the exact same classes the static HTML
+     used to have — the container itself (with its id) still lives in the
+     page; only the repeated child cards are now built here.
+
+     PAGE_EVENTS is filled in by renderEvents() and read by initCalendar()
+     further down, so the calendar no longer carries its own hard-coded
+     event list.
+     ------------------------------------------------------------------------ */
+  var PAGE_EVENTS = [];
+
+  function fetchJSON(path) {
+    return fetch(path).then(function (res) {
+      if (!res.ok) throw new Error("Failed to load " + path);
+      return res.json();
+    });
+  }
+
+  function escapeHTML(value) {
+    return String(value == null ? "" : value).replace(/[&<>"']/g, function (c) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+  }
+
+  function renderEvents() {
+    var recentList = document.getElementById("recent-events-list");
+    var calendarRoot = document.getElementById("events-calendar");
+    if (!recentList && !calendarRoot) return Promise.resolve();
+
+    return fetchJSON("data/events.json").then(function (data) {
+      PAGE_EVENTS = data.upcoming_events || [];
+
+      if (recentList) {
+        recentList.innerHTML = (data.recent_events || []).map(function (ev) {
+          return (
+            '<article class="card reveal">' +
+              '<div class="card-media">' +
+                '<span class="tag">' + escapeHTML(ev.tag) + "</span>" +
+                '<img src="' + escapeHTML(ev.image) + '" alt="' + escapeHTML(ev.alt) + '">' +
+              "</div>" +
+              '<div class="card-body">' +
+                "<h3>" + escapeHTML(ev.title) + "</h3>" +
+                "<p>" + escapeHTML(ev.description) + "</p>" +
+                '<a class="link-arrow" href="' + escapeHTML(ev.link_href) + '">' + escapeHTML(ev.link_text) + "</a>" +
+              "</div>" +
+            "</article>"
+          );
+        }).join("");
+      }
+    }).catch(function (err) { console.error(err); });
+  }
+
+  function renderNews() {
+    var featured = document.getElementById("featured-post");
+    var list = document.getElementById("news-list");
+    if (!featured && !list) return Promise.resolve();
+
+    return fetchJSON("data/news.json").then(function (data) {
+      if (featured && data.featured) {
+        var f = data.featured;
+        featured.innerHTML =
+          '<img src="' + escapeHTML(f.image) + '" alt="' + escapeHTML(f.alt) + '">' +
+          '<div class="card-body">' +
+            '<div class="post-meta">' +
+              '<span class="tag">' + escapeHTML(f.tag) + "</span>" +
+              "<span>" + escapeHTML(f.date) + "</span>" +
+              "<span>By " + escapeHTML(f.author) + "</span>" +
+            "</div>" +
+            '<h3 style="font-size:clamp(1.3rem,1.1rem+1vw,1.75rem);">' + escapeHTML(f.title) + "</h3>" +
+            "<p>" + escapeHTML(f.summary) + "</p>" +
+            '<a class="link-arrow" href="' + escapeHTML(f.link_href) + '">' + escapeHTML(f.link_text) + "</a>" +
+          "</div>";
+      }
+
+      if (list) {
+        list.innerHTML = (data.posts || []).map(function (post) {
+          return (
+            '<article class="card reveal">' +
+              '<div class="card-media">' +
+                '<span class="tag">' + escapeHTML(post.tag) + "</span>" +
+                '<img src="' + escapeHTML(post.image) + '" alt="' + escapeHTML(post.alt) + '">' +
+              "</div>" +
+              '<div class="card-body">' +
+                '<div class="post-meta"><span>' + escapeHTML(post.date) + "</span></div>" +
+                "<h3>" + escapeHTML(post.title) + "</h3>" +
+                "<p>" + escapeHTML(post.summary) + "</p>" +
+                '<a class="link-arrow" href="' + escapeHTML(post.link_href) + '">' + escapeHTML(post.link_text) + "</a>" +
+              "</div>" +
+            "</article>"
+          );
+        }).join("");
+      }
+    }).catch(function (err) { console.error(err); });
+  }
+
+  function renderGallery() {
+    var photoList = document.getElementById("gallery-list");
+    var videoList = document.getElementById("video-list");
+    if (!photoList && !videoList) return Promise.resolve();
+
+    return fetchJSON("data/gallery.json").then(function (data) {
+      if (photoList) {
+        photoList.innerHTML = (data.photos || []).map(function (p) {
+          return (
+            '<button class="gallery-item reveal" data-category="' + escapeHTML(p.category) + '"' +
+                    ' data-full="' + escapeHTML(p.image) + '" data-caption="' + escapeHTML(p.caption) + '">' +
+              '<img src="' + escapeHTML(p.image) + '" alt="' + escapeHTML(p.alt) + '" loading="lazy">' +
+              '<span class="cap">' + escapeHTML(p.caption) + "</span>" +
+            "</button>"
+          );
+        }).join("");
+      }
+
+      if (videoList) {
+        videoList.innerHTML = (data.videos || []).map(function (v) {
+          return (
+            '<article class="card reveal">' +
+              '<div class="card-media">' +
+                '<span class="tag">' + escapeHTML(v.tag) + "</span>" +
+                '<img src="' + escapeHTML(v.image) + '" alt="' + escapeHTML(v.alt) + '">' +
+              "</div>" +
+              '<div class="card-body">' +
+                "<h3>" + escapeHTML(v.title) + "</h3>" +
+                "<p>" + escapeHTML(v.description) + "</p>" +
+              "</div>" +
+            "</article>"
+          );
+        }).join("");
+      }
+    }).catch(function (err) { console.error(err); });
+  }
+
+  function renderProjects() {
+    var list = document.getElementById("project-list");
+    if (!list) return Promise.resolve();
+
+    return fetchJSON("data/projects.json").then(function (data) {
+      list.innerHTML = (data.projects || []).map(function (p) {
+        var outcomes = (p.outcomes || []).map(function (o) {
+          return '<span class="outcome">' + escapeHTML(o) + "</span>";
+        }).join("");
+
+        return (
+          '<article class="card reveal" data-category="' + escapeHTML(p.category) + '">' +
+            '<div class="card-media">' +
+              '<span class="tag">' + escapeHTML(p.tag) + "</span>" +
+              '<img src="' + escapeHTML(p.image) + '" alt="' + escapeHTML(p.alt) + '">' +
+            "</div>" +
+            '<div class="card-body">' +
+              "<h3>" + escapeHTML(p.title) + "</h3>" +
+              "<p>" + escapeHTML(p.description) + "</p>" +
+              '<div class="outcomes">' + outcomes + "</div>" +
+            "</div>" +
+          "</article>"
+        );
+      }).join("");
+    }).catch(function (err) { console.error(err); });
+  }
+
+  function renderMembers() {
+    var list = document.getElementById("board-list");
+    if (!list) return Promise.resolve();
+
+    return fetchJSON("data/members.json").then(function (data) {
+      list.innerHTML = (data.members || []).map(function (m) {
+        return (
+          '<article class="member member-lead reveal">' +
+            '<img src="' + escapeHTML(m.image) + '" alt="' + escapeHTML(m.alt) + '">' +
+            "<h3>" + escapeHTML(m.name) + "</h3>" +
+            '<div class="role">' + escapeHTML(m.role) + "</div>" +
+          "</article>"
+        );
+      }).join("");
+    }).catch(function (err) { console.error(err); });
+  }
+
+  function loadContent() {
+    return Promise.all([
+      renderEvents(),
+      renderNews(),
+      renderGallery(),
+      renderProjects(),
+      renderMembers()
+    ]);
+  }
+
+  /* ------------------------------------------------------------------------
      1. MOBILE MENU
      Opens the full-screen drawer, locks background scrolling, closes on
      Escape or when a link is tapped.
@@ -297,10 +487,12 @@
 
   /* ------------------------------------------------------------------------
      9. EVENTS CALENDAR
-     A small monthly calendar with no external library. Event data lives in
-     CALENDAR_EVENTS below — each entry needs a "date" in YYYY-MM-DD form.
-     Add, edit or remove events by editing that array; the grid, weekday
-     alignment and leap years are all calculated, not hard-coded.
+     A small monthly calendar with no external library. Event data comes
+     from PAGE_EVENTS (filled in by renderEvents() from /data/events.json,
+     see section 0 above) — each entry needs a "date" in YYYY-MM-DD form.
+     Add, edit or remove events through the CMS, or by editing that JSON
+     file directly; the grid, weekday alignment and leap years are all
+     calculated, not hard-coded.
      ------------------------------------------------------------------------ */
   function initCalendar() {
     var root = document.getElementById("events-calendar");
@@ -318,16 +510,8 @@
 
     var now = new Date();
 
-    var CALENDAR_EVENTS = [
-      { date: "2026-09-30", title: "Club Meeting", time: "To be confirmed", location: "Venue to be confirmed", tag: "Club Meeting", description: "Our regular get-together — plan projects, hear from a guest, catch up." },
-      { date: "2026-10-07", title: "Club Meeting", time: "To be confirmed", location: "Venue to be confirmed", tag: "Club Meeting", description: "Our regular get-together — plan projects, hear from a guest, catch up." },
-      { date: "2026-10-21", title: "Club Meeting", time: "To be confirmed", location: "Venue to be confirmed", tag: "Club Meeting", description: "Our regular get-together — plan projects, hear from a guest, catch up." },
-      { date: "2026-11-04", title: "Club Meeting", time: "To be confirmed", location: "Venue to be confirmed", tag: "Club Meeting", description: "Our regular get-together — plan projects, hear from a guest, catch up." },
-      { date: "2026-11-18", title: "Club Meeting", time: "To be confirmed", location: "Venue to be confirmed", tag: "Club Meeting", description: "Our regular get-together — plan projects, hear from a guest, catch up." }
-    ];
-
     var eventsByDate = {};
-    CALENDAR_EVENTS.forEach(function (ev) {
+    PAGE_EVENTS.forEach(function (ev) {
       (eventsByDate[ev.date] = eventsByDate[ev.date] || []).push(ev);
     });
 
@@ -449,17 +633,23 @@
 
   /* ------------------------------------------------------------------------
      Boot
+     Content is loaded first (it injects the cards that filters, the
+     lightbox and reveal-on-scroll all need to find in the DOM), then
+     everything else wires up once that's settled.
      ------------------------------------------------------------------------ */
   document.addEventListener("DOMContentLoaded", function () {
     initMobileMenu();
     initSubmenu();
-    initReveal();
-    initCounters();
-    initFilters();
-    initLightbox();
     initForms();
     initYear();
-    initCalendar();
     initHeaderScroll();
+
+    loadContent().then(function () {
+      initReveal();
+      initCounters();
+      initFilters();
+      initLightbox();
+      initCalendar();
+    });
   });
 })();
