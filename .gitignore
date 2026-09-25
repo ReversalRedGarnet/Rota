@@ -1,0 +1,4 @@
+# oauth-worker (Node/Wrangler tooling — not part of the static site itself)
+oauth-worker/node_modules/
+oauth-worker/.wrangler/
+oauth-worker/dist/

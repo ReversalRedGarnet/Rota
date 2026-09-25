@@ -4,19 +4,19 @@
 # nav or the logo. It only edits the JSON files under /data/, which the
 # pages fetch and render at load time (see js/main.js).
 #
-# Manual setup still needed before this works (not done by this commit —
-# see /oauth-worker/README.md for the full walkthrough):
-#   1. Create a GitHub OAuth App and deploy the Cloudflare Worker in
-#      /oauth-worker/ with its client ID/secret as two env vars.
-#   2. Replace base_url below with that Worker's deployed URL.
+# Login: board members now log in with just their email (a Cloudflare
+# Access one-time code) instead of a GitHub account — see
+# /oauth-worker/README.md, "Switching to email-based login (Cloudflare
+# Access)". This section (backend.name/base_url) doesn't need to change
+# for that — Decap still thinks it's doing GitHub OAuth against the same
+# Worker URL below; the Worker just answers differently now. The Worker
+# itself still needs the manual Cloudflare Access setup described there
+# before login will actually work.
 
 backend:
   name: github
   repo: ReversalRedGarnet/Rota
   branch: main
-  # REPLACE with the OAuth proxy Worker's URL once it's deployed —
-  # see /oauth-worker/README.md. Until then the "Login with GitHub"
-  # button on this page will not work.
   base_url: https://rotaract-honiara-decap-oauth.rotaracthoniara.workers.dev
 
 # Every save opens a draft (a PR against main) instead of publishing

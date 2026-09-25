@@ -2,6 +2,14 @@ name = "rotaract-honiara-decap-oauth"
 main = "src/index.js"
 compatibility_date = "2026-09-24"
 
-# GITHUB_OAUTH_ID, GITHUB_OAUTH_SECRET (required) and GITHUB_REPO_PRIVATE
-# (optional) are set as secrets after deploying, not written here — see
-# README.md. Never commit real client secrets to this file or the repo.
+# Secrets are set after deploying with `wrangler secret put <NAME>`, not
+# written here — see README.md. Never commit real secrets to this file.
+#
+# Active (Cloudflare Access) flow:
+#   CF_ACCESS_TEAM_DOMAIN  (required)
+#   GITHUB_BOT_TOKEN       (required)
+#
+# Legacy (GitHub OAuth, unused but kept for rollback) flow:
+#   GITHUB_OAUTH_ID        (required for legacy only)
+#   GITHUB_OAUTH_SECRET    (required for legacy only)
+#   GITHUB_REPO_PRIVATE    (optional, legacy only)

@@ -77,9 +77,18 @@ Leadership (board members)** — there's a form at **`/admin`** (e.g.
 [Decap CMS](https://decapcms.org), a free open-source editor made for exactly
 this: static sites with no database.
 
-Log in there with a GitHub account that has access to this repository, and
-you'll see one form per content type (Events, News, Gallery, Projects,
-Leadership). Add, edit or remove entries, fill in the fields, and hit save.
+Log in there with **just your email address** — enter it, a one-time code
+lands in your inbox, and you're in. No GitHub account, no password to
+remember, nothing to sign up for. This was chosen specifically because the
+board includes people under 18 who shouldn't need a GitHub account just to
+edit the website. Only people already added to the club's Cloudflare Access
+list can log in this way — ask whoever manages that (see
+`/oauth-worker/README.md`) to add a new board member's email before they
+try.
+
+Once in, you'll see one form per content type (Events, News, Gallery,
+Projects, Leadership). Add, edit or remove entries, fill in the fields, and
+hit save.
 
 **What "save" actually does:** it does **not** publish straight to the live
 site. It opens a **draft — a pull request against `main`** — with your
@@ -91,15 +100,24 @@ an accidental delete can't go live by itself.
 one merging a draft into `main`.** Everyone else with CMS access can create
 and edit drafts freely — the merge step is the approval gate.
 
+**On accountability:** everyone logs in with their own email, but every save
+is committed to GitHub under one shared bot account, not each person's own
+name. So git history (`git log`, GitHub's PR list) won't tell you *which
+board member* made a particular edit — only that an edit was made. If you
+ever need to know who did what, that lives in **Cloudflare Access's login
+logs** (Zero Trust → Logs → Access, in the Cloudflare dashboard) instead,
+matched up by rough time. This is a deliberate trade-off for keeping login
+this simple — worth knowing before you go looking for an author in git
+blame and don't find one.
+
 Behind the scenes, each of those five pages reads its cards from a JSON file
 in `/data/` (`events.json`, `news.json`, `gallery.json`, `projects.json`,
 `members.json`) at page load. The CMS just edits those JSON files for you —
 you never need to touch them by hand, though you still can if you'd rather.
 
-Getting `/admin` itself working (logging in with GitHub) needs a one-time
-setup step involving a small Cloudflare Worker — see
-`/oauth-worker/README.md` for that walkthrough. Until that's done, the
-`/admin` page will load but "Login with GitHub" won't work yet.
+Getting `/admin` itself working needs a one-time setup step involving a
+small Cloudflare Worker and Cloudflare Access — see
+`/oauth-worker/README.md` for that walkthrough.
 
 ---
 
