@@ -17,7 +17,7 @@ backend:
   # REPLACE with the OAuth proxy Worker's URL once it's deployed —
   # see /oauth-worker/README.md. Until then the "Login with GitHub"
   # button on this page will not work.
-  base_url: https://REPLACE-ME.workers.dev
+  base_url: https://rotaract-honiara-decap-oauth.rotaracthoniara.workers.dev
 
 # Every save opens a draft (a PR against main) instead of publishing
 # straight to the live site — someone still has to review and merge it.
