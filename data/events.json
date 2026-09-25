@@ -1,14 +1,73 @@
 {
   "upcoming_events": [
-    { "date": "2026-09-30", "title": "Club Meeting", "time": "To be confirmed", "location": "Venue to be confirmed", "tag": "Club Meeting", "description": "Our regular get-together — plan projects, hear from a guest, catch up." },
-    { "date": "2026-10-07", "title": "Club Meeting", "time": "To be confirmed", "location": "Venue to be confirmed", "tag": "Club Meeting", "description": "Our regular get-together — plan projects, hear from a guest, catch up." },
-    { "date": "2026-10-21", "title": "Club Meeting", "time": "To be confirmed", "location": "Venue to be confirmed", "tag": "Club Meeting", "description": "Our regular get-together — plan projects, hear from a guest, catch up." },
-    { "date": "2026-11-04", "title": "Club Meeting", "time": "To be confirmed", "location": "Venue to be confirmed", "tag": "Club Meeting", "description": "Our regular get-together — plan projects, hear from a guest, catch up." },
-    { "date": "2026-11-18", "title": "Club Meeting", "time": "To be confirmed", "location": "Venue to be confirmed", "tag": "Club Meeting", "description": "Our regular get-together — plan projects, hear from a guest, catch up." }
+    {
+      "date": "2026-09-30",
+      "title": "Club Meeting",
+      "time": "5.30 to 7:00 PM",
+      "location": "Mbua Valley School",
+      "tag": "Club Meeting",
+      "description": "Our regular bi weekly club meeting."
+    },
+    {
+      "date": "2026-10-07",
+      "title": "Club Meeting",
+      "time": "To be confirmed",
+      "location": "Venue to be confirmed",
+      "tag": "Club Meeting",
+      "description": "Our regular get-together — plan projects, hear from a guest, catch up."
+    },
+    {
+      "date": "2026-10-21",
+      "title": "Club Meeting",
+      "time": "To be confirmed",
+      "location": "Venue to be confirmed",
+      "tag": "Club Meeting",
+      "description": "Our regular get-together — plan projects, hear from a guest, catch up."
+    },
+    {
+      "date": "2026-11-04",
+      "title": "Club Meeting",
+      "time": "To be confirmed",
+      "location": "Venue to be confirmed",
+      "tag": "Club Meeting",
+      "description": "Our regular get-together — plan projects, hear from a guest, catch up."
+    },
+    {
+      "date": "2026-11-18",
+      "title": "Club Meeting",
+      "time": "To be confirmed",
+      "location": "Venue to be confirmed",
+      "tag": "Club Meeting",
+      "description": "Our regular get-together — plan projects, hear from a guest, catch up."
+    }
   ],
   "recent_events": [
-    { "tag": "Recent", "image": "assets/images/photo-2.svg", "alt": "Placeholder photo — a photo from this event", "title": "Event name", "description": "A line or two on how it went and roughly how many people came.", "link_text": "See the photos", "link_href": "gallery.html" },
-    { "tag": "Recent", "image": "assets/images/photo-5.svg", "alt": "Placeholder photo — a photo from this event", "title": "Event name", "description": "A line or two on how it went and roughly how many people came.", "link_text": "See the photos", "link_href": "gallery.html" },
-    { "tag": "Recent", "image": "assets/images/photo-7.svg", "alt": "Placeholder photo — a photo from this event", "title": "Event name", "description": "A line or two on how it went and roughly how many people came.", "link_text": "See the photos", "link_href": "gallery.html" }
+    {
+      "tag": "Recent",
+      "image": "assets/images/photo-2.svg",
+      "alt": "Placeholder photo — a photo from this event",
+      "title": "Event name",
+      "description": "A line or two on how it went and roughly how many people came.",
+      "link_text": "See the photos",
+      "link_href": "gallery.html"
+    },
+    {
+      "tag": "Recent",
+      "image": "assets/images/photo-5.svg",
+      "alt": "Placeholder photo — a photo from this event",
+      "title": "Event name",
+      "description": "A line or two on how it went and roughly how many people came.",
+      "link_text": "See the photos",
+      "link_href": "gallery.html"
+    },
+    {
+      "tag": "Recent",
+      "image": "assets/images/photo-7.svg",
+      "alt": "Placeholder photo — a photo from this event",
+      "title": "Event name",
+      "description": "A line or two on how it went and roughly how many people came.",
+      "link_text": "See the photos",
+      "link_href": "gallery.html"
+    }
   ]
 }
